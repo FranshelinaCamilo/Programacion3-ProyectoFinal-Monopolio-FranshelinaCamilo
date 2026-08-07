@@ -1,12 +1,338 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="801.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="1071.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="454.0" layoutX="121.0" layoutY="66.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="321.0" layoutX="194.0" layoutY="133.0" stroke="BLACK" strokeType="INSIDE" width="414.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="401.0" layoutX="229.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="592.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="268.0" layoutX="304.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="444.0" />
+      <Rectangle fx:id="casilla1" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="748.0" layoutY="492.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla2" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="674.0" layoutY="492.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla3" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="600.0" layoutY="492.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla4" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="526.0" layoutY="492.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla5" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="452.0" layoutY="492.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla6" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="378.0" layoutY="492.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla7" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="304.0" layoutY="492.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla8" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="230.0" layoutY="492.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla24" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="748.0" layoutY="426.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla9" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="230.0" layoutY="426.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla10" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="230.0" layoutY="359.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla11" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="230.0" layoutY="292.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla12" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="230.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla13" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="230.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla14" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="304.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla15" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="378.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla16" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="452.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla17" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="526.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla18" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="600.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla19" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="674.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla20" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="748.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla21" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="748.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla22" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="748.0" layoutY="292.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle fx:id="casilla23" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="748.0" layoutY="359.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cdd6dd" height="99.0" layoutX="94.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cdd6dd" height="99.0" layoutX="324.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cdd6dd" height="99.0" layoutX="552.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cdd6dd" height="99.0" layoutX="778.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <ImageView fx:id="ImageVIew1" fitHeight="67.0" fitWidth="74.0" layoutX="94.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Recursos/Personaje1%20(2)-Photoroom.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ImageVIew2" fitHeight="77.0" fitWidth="62.0" layoutX="324.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Recursos/Personaje3%20(2)-Photoroom.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ImageVIew3" fitHeight="77.0" fitWidth="62.0" layoutX="552.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Recursos/Personaje4%20(2)-Photoroom.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ImageVIew4" fitHeight="77.0" fitWidth="62.0" layoutX="785.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Recursos/Personaje2%20(2)-Photoroom.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ImageVIew11" fitHeight="136.0" fitWidth="146.0" layoutX="22.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Recursos/banco1-Photoroom.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="64.0" layoutY="236.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: BOLD;" text="BANCO">
+         <font>
+            <Font name="Microsoft JhengHei UI" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="260.0" prefHeight="54.0" prefWidth="111.0" text="Nadie se ha movido." textAlignment="CENTER" wrapText="true" />
+      <ImageView fitHeight="99.0" fitWidth="111.0" layoutX="40.0" layoutY="305.0">
+         <image>
+            <Image url="@../Recursos/Casa-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="120.0" fitWidth="111.0" layoutX="40.0" layoutY="444.0">
+         <image>
+            <Image url="@../Recursos/Edificio-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="64.0" layoutY="400.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: BOLD;" text="CASA">
+         <font>
+            <Font name="Microsoft JhengHei UI" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="65.0" layoutY="564.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: BOLD;" text="HOTEL">
+         <font>
+            <Font name="Microsoft JhengHei UI" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="150.0" layoutY="29.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Nombre:" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="150.0" layoutY="51.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Color:" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="150.0" layoutY="74.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Dinero:" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="388.0" layoutY="28.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Nombre:" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="388.0" layoutY="50.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Color:" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="388.0" layoutY="73.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Dinero:" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="614.0" layoutY="30.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Nombre:" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="614.0" layoutY="52.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Color:" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="614.0" layoutY="75.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Dinero:" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="838.0" layoutY="29.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Nombre:" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="838.0" layoutY="51.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Color:" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="838.0" layoutY="74.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Dinero:" textAlignment="CENTER" wrapText="true" />
+      <ImageView fitHeight="54.0" fitWidth="56.0" layoutX="461.0" layoutY="491.0">
+         <image>
+            <Image url="@../Recursos/question-Photoroom.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="54.0" fitWidth="56.0" layoutX="387.0" layoutY="158.0">
+         <image>
+            <Image url="@../Recursos/question-Photoroom.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="54.0" fitWidth="82.0" layoutX="670.0" layoutY="485.0">
+         <image>
+            <Image url="@../Recursos/chest-removebg-preview%20(1).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="54.0" fitWidth="82.0" layoutX="226.0" layoutY="218.0">
+         <image>
+            <Image url="@../Recursos/chest-removebg-preview%20(1).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="54.0" fitWidth="82.0" layoutX="744.0" layoutY="285.0">
+         <image>
+            <Image url="@../Recursos/chest-removebg-preview%20(1).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="54.0" fitWidth="56.0" layoutX="757.0" layoutY="359.0">
+         <image>
+            <Image url="@../Recursos/question-Photoroom.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="44.0" fitWidth="47.0" layoutX="762.0" layoutY="494.0">
+         <image>
+            <Image url="@../Recursos/go-Photoroom.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="17.0" layoutX="600.0" layoutY="492.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="17.0" layoutX="378.0" layoutY="492.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff381f" height="17.0" layoutX="452.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#df95fc" height="17.0" layoutX="230.0" layoutY="358.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#df95fc" height="17.0" layoutX="230.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f270" height="17.0" layoutX="748.0" layoutY="224.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f270" height="17.0" layoutX="748.0" layoutY="425.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <ImageView fitHeight="54.0" fitWidth="62.0" layoutX="233.0" layoutY="491.0">
+         <image>
+            <Image url="@../Recursos/jail-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="458.0" layoutY="540.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Casualidad" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="384.0" layoutY="206.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Casualidad" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="755.0" layoutY="409.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Casualidad" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="680.0" layoutY="528.0" prefHeight="34.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Arca Comunal" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="755.0" layoutY="329.0" prefHeight="34.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Arca Comunal" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="236.0" layoutY="262.0" prefHeight="34.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="Arca Comunal" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="236.0" layoutY="539.0" prefHeight="25.0" prefWidth="62.0" style="-fx-font-weight: bold;" text="La Victoria" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="748.0" layoutY="529.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Cobrar $200 al Pasar" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="600.0" layoutY="509.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Avenida Báltica " textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="624.0" layoutY="542.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="\$60" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="378.0" layoutY="510.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Avenida Oriental" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="402.0" layoutY="543.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="\$100" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="229.0" layoutY="375.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Avenida Tablado" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="253.0" layoutY="408.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="\$140" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="229.0" layoutY="173.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Avenida Virginia" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="253.0" layoutY="206.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="\$200" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="452.0" layoutY="173.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Avenida Santiago" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="476.0" layoutY="206.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="\$240" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="748.0" layoutY="240.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Avenida Conneticut" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="772.0" layoutY="273.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="\$350" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="748.0" layoutY="442.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Avenida Vermont" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="772.0" layoutY="475.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="\$400" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff381f" height="17.0" layoutX="600.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="600.0" layoutY="174.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Avenida Indiana" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="624.0" layoutY="207.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="\$300" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="526.0" layoutY="157.0" prefHeight="67.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Impuestos pague $350" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="44.0" fitWidth="56.0" layoutX="757.0" layoutY="158.0">
+         <image>
+            <Image url="@../Recursos/policeman-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="752.0" layoutY="200.0" prefHeight="25.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="¡A la cárcel!" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="304.0" layoutY="158.0" prefHeight="67.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="La mitad de tu dinero a un jugador al azar" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="526.0" layoutY="494.0" prefHeight="67.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Impuestos pague $200" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="230.0" layoutY="329.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Préstamo del banco" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="ImageVIew111" fitHeight="44.0" fitWidth="62.0" layoutX="236.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Recursos/banco1-Photoroom.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="74.0" layoutX="225.0" layoutY="431.0">
+         <image>
+            <Image url="@../Recursos/train%20(1).png" />
+         </image>
+      </ImageView>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="240.0" layoutY="462.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Ferrocarril " textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="ImageVIew1111" fitHeight="44.0" fitWidth="62.0" layoutX="680.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Recursos/banco1-Photoroom.png" />
+         </image>
+      </ImageView>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="674.0" layoutY="195.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Premio del Banco" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="251.0" layoutY="477.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="\$230" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="34.0" fitWidth="74.0" layoutX="299.0" layoutY="493.0">
+         <image>
+            <Image url="@../Recursos/train%20(1).png" />
+         </image>
+      </ImageView>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="314.0" layoutY="524.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Ferrocarril " textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="325.0" layoutY="541.0" prefHeight="34.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="\$130" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <StackPane fx:id="avSantiagosp" layoutX="452.0" layoutY="226.0" prefHeight="71.0" prefWidth="74.0" />
+      <StackPane fx:id="avIndianasp" layoutX="600.0" layoutY="227.0" prefHeight="71.0" prefWidth="74.0" />
+      <StackPane fx:id="avVirginiasp" layoutX="304.0" layoutY="224.0" prefHeight="71.0" prefWidth="74.0" />
+      <StackPane fx:id="avTabladosp" layoutX="304.0" layoutY="357.0" prefHeight="71.0" prefWidth="74.0" />
+      <StackPane fx:id="avOrienalsp" layoutX="378.0" layoutY="421.0" prefHeight="71.0" prefWidth="74.0" />
+      <StackPane fx:id="avBalticasp" layoutX="600.0" layoutY="421.0" prefHeight="71.0" prefWidth="74.0" />
+      <StackPane fx:id="avVermontsp" layoutX="674.0" layoutY="422.0" prefHeight="71.0" prefWidth="74.0" />
+      <StackPane fx:id="avConneiticutsp" layoutX="674.0" layoutY="225.0" prefHeight="71.0" prefWidth="74.0" />
    </children>
 </Pane>
