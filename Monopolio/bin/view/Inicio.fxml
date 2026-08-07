@@ -5,14 +5,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:controller="controller.InicioController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="604.0" style="-fx-background-color: #efe9ce;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InicioController">
    <children>
-      <ImageView fitHeight="532.0" fitWidth="608.0" layoutX="-5.0" layoutY="-1.0">
+      <ImageView fitHeight="532.0" fitWidth="606.0" layoutX="1.0" layoutY="22.0">
          <image>
-            <Image url="@../Recursos/MonopolyBCG.jpeg" />
+            <Image url="@../Recursos/MonopolyBCG1.jpeg" />
          </image>
       </ImageView>
-      <Button fx:id="BtnInicio" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="224.0" layoutY="212.0" mnemonicParsing="false" onAction="#abrirTableroController" prefHeight="48.0" prefWidth="118.0"  style="-fx-background-color: transparent;">
+      <Button fx:id="BtnInicio" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="224.0" layoutY="212.0" mnemonicParsing="false" onAction="#abrirTableroController" prefHeight="48.0" prefWidth="118.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="68.0" fitWidth="134.0">
                <image>
@@ -21,5 +21,25 @@
             </ImageView>
          </graphic></Button>
       <Button fx:id="BtnConfiguraciones" layoutX="245.0" layoutY="305.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="118.0" text="SETTINGS" />
+      <ImageView fitHeight="76.0" fitWidth="102.0" layoutX="124.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Recursos/Coin.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="76.0" fitWidth="102.0" layoutX="215.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Recursos/chest-removebg-preview%20(1).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="76.0" fitWidth="102.0" layoutX="323.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Recursos/gem-Photoroom.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="76.0" fitWidth="102.0" layoutX="422.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Recursos/question-Photoroom.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
