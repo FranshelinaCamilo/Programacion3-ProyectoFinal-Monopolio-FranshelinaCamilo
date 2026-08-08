@@ -46,17 +46,17 @@
             <Image url="@../Recursos/Personaje1%20(2)-Photoroom.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="ImageVIew2" fitHeight="77.0" fitWidth="62.0" layoutX="324.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ImageVIew2" fitHeight="77.0" fitWidth="62.0" layoutX="324.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Recursos/Personaje3%20(2)-Photoroom.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="ImageVIew3" fitHeight="77.0" fitWidth="62.0" layoutX="552.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ImageVIew3" fitHeight="77.0" fitWidth="62.0" layoutX="552.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Recursos/Personaje4%20(2)-Photoroom.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="ImageVIew4" fitHeight="77.0" fitWidth="62.0" layoutX="785.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ImageVIew4" fitHeight="77.0" fitWidth="62.0" layoutX="785.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Recursos/Personaje2%20(2)-Photoroom.png" />
          </image>
@@ -220,7 +220,7 @@
             <Font size="11.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="748.0" layoutY="240.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Avenida Conneticut" textAlignment="CENTER" wrapText="true">
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="748.0" layoutY="240.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="Avenida Connecticut" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="11.0" />
          </font>
@@ -338,11 +338,11 @@
          <children>
             <HBox prefHeight="34.0" prefWidth="98.0">
                <children>
-                  <ImageView fx:id="avSantiagoCasa1" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="avSantiagoCasa1" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image></ImageView>
-                  <ImageView fx:id="avSantiagoCasa2" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="avSantiagoCasa2" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image></ImageView>
@@ -350,11 +350,11 @@
             </HBox>
             <HBox prefHeight="34.0" prefWidth="98.0">
                <children>
-                  <ImageView fx:id="avSantiagoCasa3" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="avSantiagoCasa3" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image></ImageView>
-                  <ImageView fx:id="avSantiagoCasa4" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="avSantiagoCasa4" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image></ImageView>
@@ -367,7 +367,7 @@
             <Image url="@../Recursos/Casa-removebg-preview.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="avSantiagohotel" fitHeight="54.0" fitWidth="47.0" layoutX="466.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="avSantiagohotel" fitHeight="54.0" fitWidth="47.0" layoutX="466.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../Recursos/Edificio-removebg-preview.png" />
          </image>
@@ -376,12 +376,12 @@
          <children>
             <HBox prefHeight="34.0" prefWidth="98.0">
                <children>
-                  <ImageView fx:id="AvVirginiaCasa1" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvVirginiaCasa1" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="AvVirginiaCasa2" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvVirginiaCasa2" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
@@ -390,12 +390,12 @@
             </HBox>
             <HBox prefHeight="34.0" prefWidth="98.0">
                <children>
-                  <ImageView fx:id="AvVirginiaCasa3" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvVirginiaCasa3" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="AvVirginiaCasa4" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvVirginiaCasa4" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
@@ -404,7 +404,7 @@
             </HBox>
          </children>
       </VBox>
-      <ImageView fx:id="AvVirginiaHotel" fitHeight="54.0" fitWidth="47.0" layoutX="316.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="AvVirginiaHotel" fitHeight="54.0" fitWidth="47.0" layoutX="316.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../Recursos/Edificio-removebg-preview.png" />
          </image>
@@ -413,12 +413,12 @@
          <children>
             <HBox prefHeight="34.0" prefWidth="98.0">
                <children>
-                  <ImageView fx:id="AvTabladoCasa1" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvTabladoCasa1" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="AvTabladoCasa2" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvTabladoCasa2" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
@@ -427,12 +427,12 @@
             </HBox>
             <HBox prefHeight="34.0" prefWidth="98.0">
                <children>
-                  <ImageView fx:id="AvTabladoCasa3" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvTabladoCasa3" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="AvTabladoCasa4" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvTabladoCasa4" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
@@ -441,7 +441,7 @@
             </HBox>
          </children>
       </VBox>
-      <ImageView fx:id="AvTabladoHotel" fitHeight="54.0" fitWidth="47.0" layoutX="315.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="AvTabladoHotel" fitHeight="54.0" fitWidth="47.0" layoutX="315.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../Recursos/Edificio-removebg-preview.png" />
          </image>
@@ -450,12 +450,12 @@
          <children>
             <HBox prefHeight="34.0" prefWidth="98.0">
                <children>
-                  <ImageView fx:id="AvOrientalCasa1" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvOrientalCasa1" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="AvOrientalCasa2" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvOrientalCasa2" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
@@ -464,12 +464,12 @@
             </HBox>
             <HBox prefHeight="34.0" prefWidth="98.0">
                <children>
-                  <ImageView fx:id="AvOrientalCasa3" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvOrientalCasa3" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="AvOrientalCasa4" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvOrientalCasa4" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
@@ -478,7 +478,7 @@
             </HBox>
          </children>
       </VBox>
-      <ImageView fx:id="AvOrientalHotel" fitHeight="54.0" fitWidth="47.0" layoutX="390.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="AvOrientalHotel" fitHeight="54.0" fitWidth="47.0" layoutX="390.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../Recursos/Edificio-removebg-preview.png" />
          </image>
@@ -487,12 +487,12 @@
          <children>
             <HBox prefHeight="34.0" prefWidth="98.0">
                <children>
-                  <ImageView fx:id="AvBalticaCasa1" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvBalticaCasa1" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="AvBalticaCasa2" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvBalticaCasa2" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
@@ -501,12 +501,12 @@
             </HBox>
             <HBox prefHeight="34.0" prefWidth="98.0">
                <children>
-                  <ImageView fx:id="AvBalticaCasa3" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvBalticaCasa3" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="AvBalticaCasa4" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvBalticaCasa4" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
@@ -515,7 +515,7 @@
             </HBox>
          </children>
       </VBox>
-      <ImageView fx:id="AvBalticaHotel" fitHeight="54.0" fitWidth="47.0" layoutX="612.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="AvBalticaHotel" fitHeight="54.0" fitWidth="47.0" layoutX="612.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../Recursos/Edificio-removebg-preview.png" />
          </image>
@@ -524,12 +524,12 @@
          <children>
             <HBox prefHeight="34.0" prefWidth="98.0">
                <children>
-                  <ImageView fx:id="AvVermontCasa1" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvVermontCasa1" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="AvVermontCasa2" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvVermontCasa2" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
@@ -538,12 +538,12 @@
             </HBox>
             <HBox prefHeight="34.0" prefWidth="98.0">
                <children>
-                  <ImageView fx:id="AvVermontCasa3" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvVermontCasa3" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="AvVermontCasa4" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvVermontCasa4" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
@@ -552,21 +552,21 @@
             </HBox>
          </children>
       </VBox>
-      <ImageView fx:id="AvVermontHotel" fitHeight="54.0" fitWidth="47.0" layoutX="686.0" layoutY="419.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="AvVermontHotel" fitHeight="54.0" fitWidth="47.0" layoutX="686.0" layoutY="419.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../Recursos/Edificio-removebg-preview.png" />
          </image>
       </ImageView>
-      <VBox fx:id="AvConneticut" layoutX="678.0" layoutY="224.0" prefHeight="76.0" prefWidth="74.0">
+      <VBox fx:id="AvConnecticut" layoutX="678.0" layoutY="224.0" prefHeight="76.0" prefWidth="74.0">
          <children>
             <HBox prefHeight="34.0" prefWidth="98.0">
                <children>
-                  <ImageView fx:id="AvConneticutCasa1" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvConnecticutCasa1" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="AvConneticutCasa2" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvConnecticutCasa2" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
@@ -575,12 +575,12 @@
             </HBox>
             <HBox prefHeight="34.0" prefWidth="98.0">
                <children>
-                  <ImageView fx:id="AvConneticutCasa3" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvConnecticutCasa3" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="AvConneticutCasa4" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvConnecticutCasa4" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
@@ -589,7 +589,7 @@
             </HBox>
          </children>
       </VBox>
-      <ImageView fx:id="AvConneticutHotel" fitHeight="54.0" fitWidth="47.0" layoutX="690.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="AvConnecticutHotel" fitHeight="54.0" fitWidth="47.0" layoutX="690.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../Recursos/Edificio-removebg-preview.png" />
          </image>
@@ -598,12 +598,12 @@
          <children>
             <HBox prefHeight="34.0" prefWidth="98.0">
                <children>
-                  <ImageView fx:id="AvIndianaCasa1" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvIndianaCasa1" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="AvIndianaCasa2" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvIndianaCasa2" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
@@ -612,12 +612,12 @@
             </HBox>
             <HBox prefHeight="34.0" prefWidth="98.0">
                <children>
-                  <ImageView fx:id="AvIndianaCasa3" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvIndianaCasa3" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="AvIndianaCasa4" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AvIndianaCasa4" fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../Recursos/Casa-removebg-preview.png" />
                      </image>
@@ -626,10 +626,14 @@
             </HBox>
          </children>
       </VBox>
-      <ImageView fx:id="AvIndianaHotel" fitHeight="54.0" fitWidth="47.0" layoutX="612.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="AvIndianaHotel" fitHeight="54.0" fitWidth="47.0" layoutX="612.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../Recursos/Edificio-removebg-preview.png" />
          </image>
       </ImageView>
+      <Rectangle fx:id="turno1" arcHeight="5.0" arcWidth="5.0" fill="#7e7b80" height="8.0" layoutX="103.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" width="35.0" />
+      <Rectangle fx:id="turno2" arcHeight="5.0" arcWidth="5.0" fill="#7e7b80" height="8.0" layoutX="340.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" width="35.0" />
+      <Rectangle fx:id="turno3" arcHeight="5.0" arcWidth="5.0" fill="#7e7b80" height="8.0" layoutX="563.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" width="35.0" />
+      <Rectangle fx:id="turno4" arcHeight="5.0" arcWidth="5.0" fill="#7e7b80" height="8.0" layoutX="792.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" width="35.0" />
    </children>
 </Pane>
