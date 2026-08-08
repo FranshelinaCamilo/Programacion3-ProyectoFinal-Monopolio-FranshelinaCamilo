@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="1071.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:controller="controller.TableroController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="1071.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="401.0" layoutX="229.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="592.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="268.0" layoutX="304.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="444.0" />
