@@ -1,0 +1,52 @@
+package model;
+
+public class Propiedad {
+    private String nombre;
+    private int precio;
+    private int alquiler;
+    private Jugador propietario;
+
+    public Propiedad() {
+        setNombre("");
+        setPrecio(0);
+        setAlquiler(0);
+        setPropietario(null);
+    }
+
+    public Propiedad(String nombre, int precio, int alquiler, Jugador propietario) {
+        setNombre(nombre);
+        setPrecio(precio);
+        setAlquiler(alquiler);
+        setPropietario(propietario);
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    public int getPrecio() {
+        return precio;
+    }
+    public int getAlquiler() {
+        return alquiler;
+    }
+    public Jugador getPropietario() {
+        return propietario;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+    public void setAlquiler(int alquiler) {
+        this.alquiler = alquiler;
+    }
+    public void setPropietario(Jugador propietario) {
+        this.propietario = propietario;
+    }
+
+    public boolean estaDisponible() {
+        return propietario == null;
+    }
+}
