@@ -26,6 +26,11 @@ public class Banco {
         dinero += cantidad;
     }
 
+    public void cobrar(Jugador jugador, int cantidad){
+        jugador.pagar(cantidad);
+        recibir(cantidad);
+    }
+
     public void transferir(Jugador jugador1, Jugador jugador2) {
     }
 }

@@ -1,10 +1,17 @@
 package controller;
 
 import javafx.fxml.FXML;
+import model.Casilla;
+import model.Dado;
 import model.Juego;
 import model.Jugador;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.shape.Rectangle;
+import static javafx.scene.paint.Color.*;
 import java.util.List;
+import javafx.scene.image.ImageView;
+import javafx.application.Platform;
 
 public class TableroController {
     @FXML
@@ -43,7 +50,56 @@ public class TableroController {
     @FXML
     private Label lblDinero4;
 
+    @FXML
+    private Rectangle turno1;
+
+    @FXML
+    private Rectangle turno2;
+
+    @FXML
+    private Rectangle turno3;
+
+    @FXML
+    private Rectangle turno4;
+
+    @FXML
+    private Button btnLanzarDado;
+
+    @FXML
+    private ImageView ficha1;
+
+    @FXML
+    private ImageView ficha2;
+
+    @FXML
+    private ImageView ficha3;
+
+    @FXML
+    private ImageView ficha4;
+
     private Juego juego;
+
+    int[] posicionesX = {
+        748, 674, 600, 526, 452, 378,
+        304, 230, 230, 230, 230, 230,
+        230, 304, 378, 452, 526, 600,
+        674, 748, 748, 748, 748, 748
+    };
+
+    int[] posicionesY = {
+        492, 492, 492, 492, 492, 492,
+        492, 492, 426, 359, 292, 225, 
+        158, 158, 158, 158, 158, 158,
+        158, 158, 225, 292, 359, 426
+    };
+
+    int[] desplazamientoX = {
+        0, 0, 40, 36
+    };
+
+    int[] desplazamientoY = {
+        4, 41, 0, 31
+    };
 
     public TableroController() {
     }
@@ -59,6 +115,7 @@ public class TableroController {
     public void setJuego(Juego juego) {
         this.juego = juego;
         actualizarInformacionJugadores();
+        actualizarTurnoActual();
     }
     
     private void actualizarInformacionJugadores() {
@@ -70,23 +127,157 @@ public class TableroController {
                     lblNombre1.setText(jugador.getNombre());
                     lblColor1.setText("Rojo");
                     lblDinero1.setText(String.valueOf(jugador.getDinero()));
+                    ficha1.setVisible(true);
                     break;
                 case 1:
                     lblNombre2.setText(jugador.getNombre());
                     lblColor2.setText("Verde");
                     lblDinero2.setText(String.valueOf(jugador.getDinero()));
+                    ficha2.setVisible(true);
                     break;
                 case 2:
                     lblNombre3.setText(jugador.getNombre());
                     lblColor3.setText("Azul");
                     lblDinero3.setText(String.valueOf(jugador.getDinero()));
+                    ficha3.setVisible(true);
                     break;
                 case 3:
                     lblNombre4.setText(jugador.getNombre());
                     lblColor4.setText("Rosa");
                     lblDinero4.setText(String.valueOf(jugador.getDinero()));
+                    ficha4.setVisible(true);
                     break;
             }
+        }
+    }
+
+    private void actualizarTurnoActual() {
+        if(juego.getTurnoActual() == 0){
+            turno1.setFill(GREEN);
+            turno2.setFill(LIGHTGRAY);
+            turno3.setFill(LIGHTGRAY);
+            turno4.setFill(LIGHTGRAY);
+        } else if(juego.getTurnoActual() == 1){
+            turno2.setFill(GREEN);
+            turno1.setFill(LIGHTGRAY);
+            turno3.setFill(LIGHTGRAY);
+            turno4.setFill(LIGHTGRAY);
+        } else if(juego.getTurnoActual() == 2){
+            turno3.setFill(GREEN);
+            turno1.setFill(LIGHTGRAY);
+            turno2.setFill(LIGHTGRAY);
+            turno4.setFill(LIGHTGRAY);
+        } else if(juego.getTurnoActual() == 3){
+            turno4.setFill(GREEN);
+            turno1.setFill(LIGHTGRAY);
+            turno2.setFill(LIGHTGRAY);
+            turno3.setFill(LIGHTGRAY);
+        }
+    }
+
+    @FXML
+    private void lanzarDado() {
+        Dado dado = new Dado();
+        int resultado1 = dado.lanzarDado();
+        int resultado2 = dado.lanzarDado();
+
+        int movimiento = resultado1 + resultado2;
+        Jugador jugadorActual = juego.getJugadorActual();
+
+        System.out.println("Jugador actual: " + jugadorActual.getNombre());
+        System.out.println("Resultado del dado: " + resultado1 + " + " + resultado2 + " = " + movimiento);
+
+        int posicionAnterior = jugadorActual.getPosicion();
+
+        int nuevaPosicion = posicionAnterior + movimiento;
+        if (nuevaPosicion >= 24) {
+            nuevaPosicion = nuevaPosicion % 24;
+        } 
+
+        jugadorActual.setPosicion(nuevaPosicion);
+
+        if(juego.getTurnoActual() == 0){
+            moverJugador(jugadorActual, ficha1, posicionAnterior, movimiento);
+        } else if(juego.getTurnoActual() == 1){
+            moverJugador(jugadorActual, ficha2, posicionAnterior, movimiento);
+        } else if(juego.getTurnoActual() == 2){
+            moverJugador(jugadorActual, ficha3, posicionAnterior, movimiento);
+        } else if(juego.getTurnoActual() == 3){
+            moverJugador(jugadorActual, ficha4, posicionAnterior, movimiento);
+        }
+    }
+
+    private void moverJugador(Jugador jugador, ImageView ficha, int posicionAnterior, int movimiento) {
+
+        try {
+            new Thread(() -> {
+                for (int i = 1; i <= movimiento; i++) {
+
+                    int indice = (posicionAnterior + i) % 24;
+
+                    int x = posicionesX[indice] + desplazamientoX[juego.getTurnoActual()];
+                    int y = posicionesY[indice] + desplazamientoY[juego.getTurnoActual()];
+
+                    Platform.runLater(() -> {
+                        ficha.setLayoutX(x);
+                        ficha.setLayoutY(y);
+                    });
+
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                Platform.runLater(() -> {
+                    procesarCasilla(jugador);
+                    actualizarInformacionJugadores();
+                    juego.siguienteTurno();
+                    actualizarTurnoActual();
+                });
+            }).start();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void procesarCasilla(Jugador jugador){
+        int posicion = jugador.getPosicion();
+
+        Casilla casilla = juego.getCasillas().get(posicion);
+
+        System.out.println("Cayó en la casilla: " + (posicion + 1));
+        System.out.println("Tipo: " + casilla.getTipo());
+
+        switch (casilla.getTipo()) {
+            case PROPIEDAD:
+                System.out.println("Cayo en una propiedad");
+                break;
+            case IMPUESTO:
+                if(casilla.getPosicion() == 3)
+                    juego.getBanco().cobrar(jugador, 200);
+                else if(casilla.getPosicion() == 16)
+                    juego.getBanco().cobrar(jugador, 350);
+                break;
+            case SUERTE:
+                System.out.println("Cayo en suerte");
+                break;
+            case COMUNIDAD:
+                System.out.println("Cayo en comunidad");
+                break;
+            case CARCEL:
+                System.out.println("Cayo en la carcel");
+                break;
+            case IR_A_LA_CARCEL:
+                System.out.println("Cayo en ir a la carcel");
+                break;
+            case PARADA:
+                System.out.println("Cayo en una parada");
+                break;
+            case SALIDA:
+                System.out.println("Cayo en salida");
+                break;
         }
     }
 }

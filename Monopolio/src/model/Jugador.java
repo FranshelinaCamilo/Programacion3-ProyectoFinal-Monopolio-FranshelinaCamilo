@@ -55,4 +55,14 @@ public class Jugador {
     public void eliminarPropiedad(Propiedad propiedad) {
         propiedades.remove(propiedad);
     }
+
+    public void pagar(int cantidad) {
+        if (cantidad <= dinero) {
+            dinero -= cantidad;
+        }
+    }
+
+    public void recibir(int cantidad) {
+        dinero += cantidad;
+    }
 }

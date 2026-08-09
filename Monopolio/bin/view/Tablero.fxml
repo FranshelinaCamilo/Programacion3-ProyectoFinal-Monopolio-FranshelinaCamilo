@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:controller="controller.TableroController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="1071.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="1071.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TableroController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="401.0" layoutX="229.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="592.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="268.0" layoutX="304.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="444.0" />
@@ -635,5 +636,39 @@
       <Rectangle fx:id="turno2" arcHeight="5.0" arcWidth="5.0" fill="#7e7b80" height="8.0" layoutX="340.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" width="35.0" />
       <Rectangle fx:id="turno3" arcHeight="5.0" arcWidth="5.0" fill="#7e7b80" height="8.0" layoutX="563.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" width="35.0" />
       <Rectangle fx:id="turno4" arcHeight="5.0" arcWidth="5.0" fill="#7e7b80" height="8.0" layoutX="792.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" width="35.0" />
+      <Button fx:id="btnLanzarDado" layoutX="874.0" layoutY="291.0" mnemonicParsing="false" onAction="#lanzarDado" prefHeight="76.0" prefWidth="142.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="68.0" fitWidth="126.0">
+               <image>
+                  <Image url="@../Recursos/btnDado-Photoroom.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label alignment="CENTER" layoutX="873.0" layoutY="363.0" prefHeight="25.0" prefWidth="135.0" style="-fx-font-weight: BOLD;" text="LANZAR DADO">
+         <font>
+            <Font name="Microsoft JhengHei UI" size="16.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="ficha1" fitHeight="34.0" fitWidth="47.0" layoutX="743.0" layoutY="494.0" visible="false">
+         <image>
+            <Image url="@../Recursos/chanchoRojo-Photoroom.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ficha4" fitHeight="34.0" fitWidth="35.0" layoutX="783.0" layoutY="521.0" visible="false">
+         <image>
+            <Image url="@../Recursos/chanchoRosa-Photoroom.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ficha2" fitHeight="25.0" fitWidth="47.0" layoutX="747.0" layoutY="531.0" visible="false">
+         <image>
+            <Image url="@../Recursos/chanchoVerde-Photoroom.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ficha3" fitHeight="34.0" fitWidth="35.0" layoutX="783.0" layoutY="490.0" visible="false">
+         <image>
+            <Image url="@../Recursos/chanchoAzul-Photoroom.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
