@@ -1,10 +1,21 @@
 package controller;
 import javafx.fxml.FXML;
 import utils.Navegacion;
+import javafx.scene.control.Button;
 
 public class InicioController {
     @FXML
-    private void abrirTableroController(){
-        Navegacion.abrirVentana("/view/Tablero.fxml", "Monopolio");
+    private Button BtnInicio;
+
+    @FXML
+    private void abrirSeleccion(){
+        Navegacion.abrirVentana("/view/Seleccion.fxml", "Seleccion de jugadores");
+        Navegacion.cerrarVentana(BtnInicio); 
+    } 
+
+    @FXML
+    private void abrirConfiguracion(){
+        Navegacion.abrirVentana("/view/Configuracion.fxml", "Configuración");
+        Navegacion.cerrarVentana(BtnInicio);
     } 
 }

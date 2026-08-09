@@ -17,7 +17,7 @@
             <Image url="@../Recursos/Monopoly1.png" />
          </image>
       </ImageView>
-      <Button fx:id="BtnInicio" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="224.0" layoutY="212.0" mnemonicParsing="false" onAction="#abrirTableroController" prefHeight="48.0" prefWidth="118.0" style="-fx-background-color: transparent;">
+      <Button fx:id="BtnInicio" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="224.0" layoutY="212.0" mnemonicParsing="false" onAction="#abrirSeleccion" prefHeight="48.0" prefWidth="118.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="68.0" fitWidth="139.0">
                <image>
@@ -25,7 +25,14 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="BtnConfiguraciones" layoutX="245.0" layoutY="305.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="118.0" style="-fx-background-color: trsnaparent;" />
+      <Button fx:id="BtnConfiguraciones" layoutX="236.0" layoutY="282.0" mnemonicParsing="false" onAction="#abrirConfiguracion" prefHeight="48.0" prefWidth="118.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="77.0" fitWidth="120.0">
+               <image>
+                  <Image url="@../Recursos/BtnSettings.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <ImageView fitHeight="76.0" fitWidth="102.0" layoutX="124.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Recursos/Coin.png" />
@@ -44,11 +51,6 @@
       <ImageView fitHeight="76.0" fitWidth="102.0" layoutX="422.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Recursos/question-Photoroom.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="77.0" fitWidth="120.0" layoutX="243.0" layoutY="286.0">
-         <image>
-            <Image url="@../Recursos/BtnSettings.png" />
          </image>
       </ImageView>
    </children>

@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="604.0" style="-fx-background-color: #efe9ce;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InicioController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="604.0" style="-fx-background-color: #efe9ce;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SeleccionController">
    <children>
-      <Button fx:id="btnStart" layoutX="232.0" layoutY="364.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="102.0" style="-fx-background-color: transparent;" visible="false">
+      <Button fx:id="btnStart" layoutX="232.0" layoutY="364.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="102.0" onAction="#PresionarStart" style="-fx-background-color: transparent;" visible="false">
          <graphic>
             <ImageView fitHeight="91.0" fitWidth="132.0">
                <image>
@@ -24,7 +24,7 @@
             <Image url="@../Recursos/tituloJugadores-Photoroom.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn2" layoutX="99.0" layoutY="77.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="81.0" style="-fx-background-color: transparent;">
+      <Button fx:id="btn2" layoutX="99.0" layoutY="77.0" mnemonicParsing="false" onAction="#Presionar2Jugador" prefHeight="42.0" prefWidth="81.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="90.0" fitWidth="125.0">
                <image>
@@ -33,7 +33,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="btn3" layoutX="244.0" layoutY="71.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="81.0" style="-fx-background-color: transparent;">
+      <Button fx:id="btn3" layoutX="244.0" layoutY="71.0" mnemonicParsing="false" onAction="#Presionar3Jugador" prefHeight="55.0" prefWidth="81.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="96.0" fitWidth="105.0">
                <image>
@@ -42,7 +42,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="btn4" layoutX="386.0" layoutY="78.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="134.0" style="-fx-background-color: transparent;">
+      <Button fx:id="btn4" layoutX="386.0" layoutY="78.0" mnemonicParsing="false" onAction="#Presionar4Jugador" prefHeight="67.0" prefWidth="134.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="75.0" fitWidth="112.0">
                <image>
@@ -72,65 +72,44 @@
             <Image url="@../Recursos/chanchoRojo-Photoroom.png" />
          </image>
       </ImageView>
-      <Label layoutX="64.0" layoutY="285.0" style="-fx-font-weight: bold;" text="Jugador 2" visible="false">
+      <Label fx:id="lblJugador3" layoutX="63.0" layoutY="293.0" style="-fx-font-weight: bold;" text="Jugador 3" visible="false">
          <font>
             <Font name="Segoe UI" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="66.0" layoutY="325.0" style="-fx-font-weight: bold;" text="Nombre: " visible="false">
+      <Label fx:id="lblJugador3Nombre" layoutX="65.0" layoutY="333.0" style="-fx-font-weight: bold;" text="Nombre: " visible="false">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtJugador2" layoutX="130.0" layoutY="323.0" visible="false" />
-      <ImageView fitHeight="45.0" fitWidth="44.0" layoutX="154.0" layoutY="270.0" visible="false">
-         <image>
-            <Image url="@../Recursos/Personaje3%20(2)-Photoroom.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="33.0" fitWidth="53.0" layoutX="196.0" layoutY="279.0" visible="false">
-         <image>
-            <Image url="@../Recursos/chanchoVerde-Photoroom.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="319.0" layoutY="189.0" style="-fx-font-weight: bold;" text="Jugador 3">
-         <font>
-            <Font name="Segoe UI" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="321.0" layoutY="229.0" style="-fx-font-weight: bold;" text="Nombre: ">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtJugador3" layoutX="385.0" layoutY="227.0" />
-      <ImageView fitHeight="45.0" fitWidth="44.0" layoutX="411.0" layoutY="174.0">
+      <TextField fx:id="txtJugador3" layoutX="129.0" layoutY="331.0" visible="false" />
+      <ImageView fx:id="imgJugador3P" fitHeight="45.0" fitWidth="44.0" layoutX="155.0" layoutY="278.0" visible="false">
          <image>
             <Image url="@../Recursos/Personaje4%20(2)-Photoroom.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="45.0" fitWidth="53.0" layoutX="442.0" layoutY="170.0">
+      <ImageView fx:id="imgJugador3C" fitHeight="45.0" fitWidth="53.0" layoutX="186.0" layoutY="274.0" visible="false">
          <image>
             <Image url="@../Recursos/chanchoAzul-Photoroom.png" />
          </image>
       </ImageView>
-      <Label layoutX="320.0" layoutY="288.0" style="-fx-font-weight: bold;" text="Jugador 4" visible="false">
+      <Label fx:id="lblJugador4" layoutX="320.0" layoutY="288.0" style="-fx-font-weight: bold;" text="Jugador 4" visible="false">
          <font>
             <Font name="Segoe UI" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="322.0" layoutY="328.0" style="-fx-font-weight: bold;" text="Nombre: " visible="false">
+      <Label fx:id="lblJugador4Nombre" layoutX="322.0" layoutY="328.0" style="-fx-font-weight: bold;" text="Nombre: " visible="false">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
       <TextField fx:id="txtJugador4" layoutX="386.0" layoutY="326.0" visible="false" />
-      <ImageView fitHeight="45.0" fitWidth="44.0" layoutX="412.0" layoutY="273.0" visible="false">
+      <ImageView fx:id="imgJugador4P" fitHeight="45.0" fitWidth="44.0" layoutX="412.0" layoutY="273.0" visible="false">
          <image>
             <Image url="@../Recursos/Personaje2%20(2)-Photoroom.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="45.0" fitWidth="53.0" layoutX="444.0" layoutY="273.0" visible="false">
+      <ImageView fx:id="imgJugador4C" fitHeight="45.0" fitWidth="53.0" layoutX="444.0" layoutY="273.0" visible="false">
          <image>
             <Image url="@../Recursos/chanchoRosa-Photoroom.png" />
          </image>
@@ -145,7 +124,7 @@
             <Image url="@../Recursos/question-Photoroom.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnStart1" layoutX="233.0" layoutY="279.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="102.0" style="-fx-background-color: transparent;">
+      <Button fx:id="btnStart1" layoutX="233.0" layoutY="279.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="102.0" onAction="#PresionarStart" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="91.0" fitWidth="132.0">
                <image>
@@ -154,5 +133,26 @@
             </ImageView>
          </graphic>
       </Button>
+      <Label layoutX="320.0" layoutY="185.0" style="-fx-font-weight: bold;" text="Jugador 2">
+         <font>
+            <Font name="Segoe UI" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="322.0" layoutY="225.0" style="-fx-font-weight: bold;" text="Nombre: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtJugador2" layoutX="386.0" layoutY="223.0" />
+      <ImageView fitHeight="45.0" fitWidth="44.0" layoutX="410.0" layoutY="170.0">
+         <image>
+            <Image url="@../Recursos/Personaje3%20(2)-Photoroom.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="53.0" layoutX="452.0" layoutY="179.0">
+         <image>
+            <Image url="@../Recursos/chanchoVerde-Photoroom.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
