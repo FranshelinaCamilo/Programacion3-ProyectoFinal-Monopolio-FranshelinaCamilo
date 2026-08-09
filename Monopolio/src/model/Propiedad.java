@@ -5,12 +5,21 @@ public class Propiedad {
     private int precio;
     private int alquiler;
     private Jugador propietario;
+    private Grupo grupo;
+
+    public enum Grupo {
+        ROJO,
+        AZUL,
+        MORADO,
+        AMARILLO
+    }
 
     public Propiedad() {
         setNombre("");
         setPrecio(0);
         setAlquiler(0);
         setPropietario(null);
+        setGrupo(null);
     }
 
     public Propiedad(String nombre, int precio, int alquiler, Jugador propietario) {
@@ -18,6 +27,7 @@ public class Propiedad {
         setPrecio(precio);
         setAlquiler(alquiler);
         setPropietario(propietario);
+        setGrupo(null);
     }
 
     public String getNombre() {
@@ -32,6 +42,9 @@ public class Propiedad {
     public Jugador getPropietario() {
         return propietario;
     }
+    public Grupo getGrupo() {
+        return grupo;
+    }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -44,6 +57,9 @@ public class Propiedad {
     }
     public void setPropietario(Jugador propietario) {
         this.propietario = propietario;
+    }
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
     }
 
     public boolean estaDisponible() {

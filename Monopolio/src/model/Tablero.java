@@ -14,4 +14,8 @@ public class Tablero {
     public void setCasillas(Casilla[] casillas) {
         this.casillas = casillas;
     }
+
+    public Casilla getCasilla(int posicion) {
+            return casillas[posicion];
+    }
 }

@@ -46,4 +46,8 @@ public class Casilla {
     public void setPropiedad(Propiedad propiedad) {
         this.propiedad = propiedad;
     }
+
+    public boolean esPropiedad() {
+        return tipo == TipoCasilla.PROPIEDAD;
+    }
 }
