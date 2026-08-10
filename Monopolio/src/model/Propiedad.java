@@ -11,7 +11,8 @@ public class Propiedad {
         ROJO,
         AZUL,
         MORADO,
-        AMARILLO
+        AMARILLO, 
+        FERROCARRIL
     }
 
     public Propiedad() {
@@ -22,7 +23,7 @@ public class Propiedad {
         setGrupo(null);
     }
 
-    public Propiedad(String nombre, int precio, int alquiler, Jugador propietario) {
+    public Propiedad(String nombre, int precio, int alquiler, Jugador propietario, Grupo grupo) {
         setNombre(nombre);
         setPrecio(precio);
         setAlquiler(alquiler);

@@ -5,8 +5,11 @@ import model.Casilla;
 import model.Dado;
 import model.Juego;
 import model.Jugador;
+import model.Propiedad;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.shape.Rectangle;
 import static javafx.scene.paint.Color.*;
 import java.util.List;
@@ -252,7 +255,13 @@ public class TableroController {
 
         switch (casilla.getTipo()) {
             case PROPIEDAD:
-                System.out.println("Cayo en una propiedad");
+                Propiedad p = casilla.getPropiedad();
+                if(p.estaDisponible()){
+                    Alert alert = new Alert(AlertType.CONFIRMATION);
+                    alert.setTitle("Propiedad Disponible");
+                    alert.setHeaderText(p.getNombre());
+                    alert.setContentText("Precio: $" + p.getPrecio() + "\n¿Desea comprar esta propiedad?");
+                }
                 break;
             case IMPUESTO:
                 if(casilla.getPosicion() == 3)
@@ -273,7 +282,10 @@ public class TableroController {
                 System.out.println("Cayo en ir a la carcel");
                 break;
             case PARADA:
+                Propiedad a = casilla.getPropiedad();
                 System.out.println("Cayo en una parada");
+                System.out.println("Precio: " + a.getPrecio());
+                System.out.println("Precio: " + a.getAlquiler());
                 break;
             case SALIDA:
                 System.out.println("Cayo en salida");

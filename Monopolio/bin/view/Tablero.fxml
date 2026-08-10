@@ -303,7 +303,7 @@
             <Font size="11.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="251.0" layoutY="477.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="\$230" textAlignment="CENTER" wrapText="true">
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="251.0" layoutY="477.0" prefHeight="34.0" prefWidth="74.0" style="-fx-font-weight: bold;" text="\$200" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="11.0" />
          </font>
@@ -318,7 +318,7 @@
             <Font size="11.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="325.0" layoutY="541.0" prefHeight="34.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="\$130" textAlignment="CENTER" wrapText="true">
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="325.0" layoutY="541.0" prefHeight="34.0" prefWidth="56.0" style="-fx-font-weight: bold;" text="\$200" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="11.0" />
          </font>
