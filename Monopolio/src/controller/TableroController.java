@@ -14,6 +14,8 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.shape.Rectangle;
 import static javafx.scene.paint.Color.*;
 import java.util.List;
+import java.util.Random;
+
 import javafx.scene.image.ImageView;
 import javafx.application.Platform;
 import javafx.scene.layout.*;
@@ -279,8 +281,10 @@ public class TableroController {
             if(fila instanceof HBox){
                 for(Node nodo: ((HBox) fila).getChildren()){
                     if(nodo instanceof ImageView){
-                        nodo.setVisible(true);
-                        return;
+                        if(contador == numeroCasa){
+                            nodo.setVisible(true);
+                            return;
+                        }
                     }
                     contador++;
                 }
@@ -290,12 +294,31 @@ public class TableroController {
 
     @FXML
     private void lanzarDado() {
+
+        Jugador jugadorActual = juego.getJugadorActual();
+
+        if(jugadorActual.getEnCarcel()){
+             Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Cárcel");
+            alert.setHeaderText("Estás en la cárcel");
+            alert.setContentText("Pierdes este turno.");
+            alert.showAndWait();
+
+            jugadorActual.setTurnosPreso(jugadorActual.getTurnosPreso() - 1);
+
+            jugadorActual.setEnCarcel(false);
+
+            juego.siguienteTurno();
+            actualizarTurnoActual();
+
+            return;
+        }
+
         Dado dado = new Dado();
         int resultado1 = dado.lanzarDado();
         int resultado2 = dado.lanzarDado();
 
         int movimiento = resultado1 + resultado2;
-        Jugador jugadorActual = juego.getJugadorActual();
 
         System.out.println("Jugador actual: " + jugadorActual.getNombre());
         System.out.println("Resultado del dado: " + resultado1 + " + " + resultado2 + " = " + movimiento);
@@ -475,22 +498,81 @@ public class TableroController {
                 }
                 break;
             case IMPUESTO:
-                if(casilla.getPosicion() == 3)
+                if(casilla.getPosicion() == 3){
+                    Alert impuesto = new Alert(AlertType.INFORMATION);
+                    impuesto.setTitle("Impuesto");
+                    impuesto.setHeaderText("¡Has caido en una casilla de impuestos!");
+                    impuesto.setContentText("Debes pagar $200 de impuestos.");
+                    impuesto.showAndWait();
+
                     juego.getBanco().cobrar(jugador, 200);
-                else if(casilla.getPosicion() == 16)
+                }
+                else if(casilla.getPosicion() == 16){
+                    Alert impuesto = new Alert(AlertType.INFORMATION);
+                    impuesto.setTitle("Impuesto");
+                    impuesto.setHeaderText("¡Has caido en una casilla de impuestos!");
+                    impuesto.setContentText("Debes pagar $350 de impuestos.");
+                    impuesto.showAndWait();
+
                     juego.getBanco().cobrar(jugador, 350);
+                }                    
                 break;
             case SUERTE:
-                System.out.println("Cayo en suerte");
+                Random random = new Random();
+                int carta = random.nextInt(4);
+
+                switch (carta) {
+                    case 0:
+                        Alert suerte1 = new 
+                        break;
+                
+                    default:
+                        break;
+                }
                 break;
             case COMUNIDAD:
                 System.out.println("Cayo en comunidad");
                 break;
             case CARCEL:
-                System.out.println("Cayo en la carcel");
+                Alert visita = new Alert(AlertType.INFORMATION);
+                visita.setTitle("Carcel");
+                visita.setHeaderText("¡Estas de visita!");
+                visita.setContentText("Bienvenido a La Victoria. Date una vuelta y sigue de largo");
+                visita.showAndWait();
                 break;
             case IR_A_LA_CARCEL:
                 System.out.println("Cayo en ir a la carcel");
+
+                jugador.setPosicion(7);
+                jugador.setEnCarcel(true);
+                jugador.setTurnosPreso(1);
+
+                Platform.runLater(() ->{
+                    ImageView ficha = null;
+
+                    if(jugador == juego.getJugadores().get(0))
+                        ficha = ficha1;
+                    else if(jugador == juego.getJugadores().get(1))
+                        ficha = ficha2;
+                    else if(jugador == juego.getJugadores().get(2))
+                        ficha = ficha3;
+                    else if(jugador == juego.getJugadores().get(3))
+                        ficha = ficha4;
+
+                    if(ficha != null){
+                        int turno = juego.getTurnoActual();
+
+                        ficha.setLayoutX(posicionesX[7] + desplazamientoX[turno]);
+                        ficha.setLayoutY(posicionesY[7] + desplazamientoY[turno]);
+                    }
+                });
+
+                Alert carcel = new Alert(AlertType.INFORMATION);
+                carcel.setTitle("¡A la carcel!");
+                carcel.setHeaderText("Has sido enviado a la carcel");
+                carcel.setContentText("Perderas tu proximo turno.");
+                carcel.showAndWait();
+
                 break;
             case PARADA:
                 Propiedad pa = casilla.getPropiedad();
