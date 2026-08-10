@@ -10,12 +10,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioMenuItem;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.shape.Rectangle;
 import static javafx.scene.paint.Color.*;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -298,10 +295,12 @@ public class TableroController {
     @FXML
     private void lanzarDado() {
 
+        btnLanzarDado.setDisable(true);
+
         Jugador jugadorActual = juego.getJugadorActual();
 
         if(jugadorActual.getEnCarcel()){
-             Alert alert = new Alert(AlertType.INFORMATION);
+            Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Cárcel");
             alert.setHeaderText("Estás en la cárcel");
             alert.setContentText("Pierdes este turno.");
@@ -313,6 +312,8 @@ public class TableroController {
 
             juego.siguienteTurno();
             actualizarTurnoActual();
+
+            btnLanzarDado.setDisable(false);
 
             return;
         }
@@ -373,6 +374,7 @@ public class TableroController {
                     actualizarInformacionJugadores();
                     juego.siguienteTurno();
                     actualizarTurnoActual();
+                    btnLanzarDado.setDisable(false);
                 });
             }).start();
         } catch(Exception e) {
@@ -495,7 +497,7 @@ public class TableroController {
                         Alert cobro = new Alert(AlertType.INFORMATION);
                         cobro.setTitle("Alquiler");
                         cobro.setHeaderText("Debes pagar alquiler");
-                        cobro.setContentText("Debes pagar $" + p.getAlquiler() + " de alquiler a" + p.getPropietario());
+                        cobro.setContentText("Debes pagar $" + p.getAlquiler() + " de alquiler a" + p.getPropietario().getNombre());
                         cobro.showAndWait();
                     }
                 }
