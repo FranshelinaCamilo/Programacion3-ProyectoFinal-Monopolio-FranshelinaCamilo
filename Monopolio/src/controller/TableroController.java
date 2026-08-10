@@ -16,6 +16,8 @@ import static javafx.scene.paint.Color.*;
 import java.util.List;
 import javafx.scene.image.ImageView;
 import javafx.application.Platform;
+import javafx.scene.layout.*;
+import javafx.scene.Node;
 
 public class TableroController {
     @FXML
@@ -80,6 +82,54 @@ public class TableroController {
 
     @FXML
     private ImageView ficha4;
+
+    @FXML
+    private VBox AvSantiago;
+
+    @FXML
+    private VBox AvVirginia;
+
+    @FXML
+    private VBox AvTablado;
+
+    @FXML
+    private VBox AvOriental;
+
+    @FXML
+    private VBox AvBaltica;
+
+    @FXML
+    private VBox AvVermont;
+
+    @FXML
+    private VBox AvConnecticut;
+
+    @FXML
+    private VBox AvIndiana;
+
+    @FXML
+    private ImageView avSantiagohotel;
+
+    @FXML
+    private ImageView AvVirginiaHotel;
+
+    @FXML
+    private ImageView AvTabladoHotel;
+
+    @FXML
+    private ImageView AvOrientalHotel;
+
+    @FXML
+    private ImageView AvBalticaHotel;
+
+    @FXML
+    private ImageView AvVermontHotel;
+
+    @FXML
+    private ImageView AvConnecticutHotel;
+
+    @FXML
+    private ImageView AvIndianaHotel;
 
     private Juego juego;
 
@@ -180,6 +230,65 @@ public class TableroController {
     }
 
     @FXML
+    private void mostrarCasa(Propiedad propiedad){
+        VBox casas = null;
+
+        switch (propiedad.getNombre()) {
+            case "Avenida Santiago":
+                casas = AvSantiago;
+                break;
+
+            case "Avenida Virginia":
+                casas = AvVirginia;
+                break;
+
+            case "Avenida Tablado":
+                casas = AvTablado;
+                break;
+
+            case "Avenida Oriental":
+                casas = AvOriental;
+                break;
+
+            case "Avenida Báltica":
+                casas = AvBaltica;
+                break;
+
+            case "Avenida Vermont":
+                casas = AvVermont;
+                break;
+
+            case "Avenida Connecticut":
+                casas = AvConnecticut;
+                break;
+
+            case "Avenida Indiana":
+                casas = AvIndiana;
+                break;
+        }
+
+        if(casas == null){
+            return;
+        }
+
+        int numeroCasa = propiedad.getCantCasas();
+
+         int contador = 0;
+
+         for(Node fila: casas.getChildren()){
+            if(fila instanceof HBox){
+                for(Node nodo: ((HBox) fila).getChildren()){
+                    if(nodo instanceof ImageView){
+                        nodo.setVisible(true);
+                        return;
+                    }
+                    contador++;
+                }
+            }
+         }
+    }
+
+    @FXML
     private void lanzarDado() {
         Dado dado = new Dado();
         int resultado1 = dado.lanzarDado();
@@ -269,8 +378,11 @@ public class TableroController {
                     alert.showAndWait().ifPresent(respuesta -> {
                         if(respuesta == comprar){
                             if(jugador.getDinero() >= p.getPrecio()){
+
                                 p.setPropietario(jugador);
+                                jugador.agregarPropiedad(p);
                                 jugador.pagar(p.getPrecio());
+
                                 actualizarInformacionJugadores();
 
                                 Alert comprado = new Alert(AlertType.INFORMATION);
@@ -313,6 +425,8 @@ public class TableroController {
 
                                             p.setCantCasas(p.getCantCasas() + 1);
                                             p.setAlquiler(p.getAlquiler() * 2);
+
+                                            mostrarCasa(p);
 
                                             actualizarInformacionJugadores();
 
@@ -392,8 +506,11 @@ public class TableroController {
                     alert.showAndWait().ifPresent(respuesta -> {
                         if(respuesta == comprar){
                             if(jugador.getDinero() >= pa.getPrecio()){
+
                                 pa.setPropietario(jugador);
+                                jugador.agregarPropiedad(pa);
                                 jugador.pagar(pa.getPrecio());
+
                                 actualizarInformacionJugadores();
 
                                 Alert comprado = new Alert(AlertType.INFORMATION);

@@ -30,7 +30,7 @@ public class Propiedad {
         setPrecio(precio);
         setAlquiler(alquiler);
         setPropietario(propietario);
-        setGrupo(null);
+        setGrupo(grupo);
         setPrecioCasa(precioCasa);
     }
 
