@@ -523,12 +523,45 @@ public class TableroController {
 
                 switch (carta) {
                     case 0:
-                        Alert suerte1 = new 
+                        Alert suerte1 = new Alert(AlertType.INFORMATION);
+                        suerte1.setTitle("Suerte");
+                        suerte1.setHeaderText("¡Felicidades!");
+                        suerte1.setContentText("Has recibido $200");
+                        suerte1.showAndWait();
+
+                        jugador.recibir(200);
                         break;
-                
-                    default:
+                    case 1:
+                        Alert suerte2 = new Alert(AlertType.INFORMATION);
+                        suerte2.setTitle("Suerte");
+                        suerte2.setHeaderText("¡Ufff Pobrecito!");
+                        suerte2.setContentText("Debes pagar $100");
+                        suerte2.showAndWait();
+
+                        juego.getBanco().cobrar(jugador, 100);
+                        break;
+                    case 2:
+                        Alert suerte3 = new Alert(AlertType.INFORMATION);
+                        suerte3.setTitle("Suerte");
+                        suerte3.setHeaderText("¡Felicidades!");
+                        suerte3.setContentText("Has recibido $50");
+                        suerte3.showAndWait();
+
+                        jugador.recibir(50);
+                        break;
+                    case 3:
+                        Alert suerte4 = new Alert(AlertType.INFORMATION);
+                        suerte4.setTitle("Suerte");
+                        suerte4.setHeaderText("¡Que sal!");
+                        suerte4.setContentText("Debes pagar $70");
+                        suerte4.showAndWait();
+
+                        juego.getBanco().cobrar(jugador, 70);
                         break;
                 }
+                
+                actualizarInformacionJugadores();
+
                 break;
             case COMUNIDAD:
                 System.out.println("Cayo en comunidad");
