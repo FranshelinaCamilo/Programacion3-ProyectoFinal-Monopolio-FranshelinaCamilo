@@ -6,6 +6,7 @@ import java.util.List;
 public class Juego {
     private ArrayList<Jugador> jugadores;
     private ArrayList<Casilla> casillas;
+    private ArrayList<Propiedad> propiedades;
     private Banco banco;
     private Tablero tablero;
     private Dado dado;
@@ -33,6 +34,7 @@ public class Juego {
     public Juego(List<Jugador> jugadores) {
         setJugadores(new ArrayList<>(jugadores));
         casillas = new ArrayList<>();
+        propiedades = new ArrayList<>();
         banco = new Banco(100000);
         tablero = new Tablero();
         dado = new Dado();
@@ -60,6 +62,9 @@ public class Juego {
     }
     public Jugador getJugadorActual() {
         return jugadores.get(turnoActual);
+    }
+    public ArrayList<Propiedad> getPropiedades(){
+        return propiedades;
     }
 
     public void setJugadores(ArrayList<Jugador> jugadores) {
@@ -110,6 +115,17 @@ public class Juego {
         casillas.add(new Casilla(21, Casilla.TipoCasilla.COMUNIDAD, null));
         casillas.add(new Casilla(22, Casilla.TipoCasilla.SUERTE, null));
         casillas.add(new Casilla(23, Casilla.TipoCasilla.PROPIEDAD, avVermont));
+
+        propiedades.add(Ferrocarril1);
+        propiedades.add(Ferrocarril2);
+        propiedades.add(avBaltica);
+        propiedades.add(avOriental);
+        propiedades.add(avConnecticut);
+        propiedades.add(avTablado);
+        propiedades.add(avVirginia);
+        propiedades.add(avSantiago);
+        propiedades.add(avIndiana);
+        propiedades.add(avVermont);
     }
 
     public boolean tieneGrupo(Jugador jugador, Propiedad.Grupo grupo){

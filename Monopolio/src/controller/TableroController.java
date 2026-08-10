@@ -6,10 +6,14 @@ import model.Dado;
 import model.Juego;
 import model.Jugador;
 import model.Propiedad;
+import utils.Navegacion;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.shape.Rectangle;
 import static javafx.scene.paint.Color.*;
@@ -19,6 +23,8 @@ import java.util.Random;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.layout.*;
 import javafx.scene.Node;
 
@@ -140,6 +146,17 @@ public class TableroController {
     @FXML
     private ImageView ivDado1;
 
+    @FXML
+    private TableView<Propiedad> tvPropiedades;
+
+    @FXML
+    private TableColumn<Propiedad, String> TCDueño;
+
+    @FXML
+    private TableColumn<Propiedad, String> TCPropiedad;
+
+    private ObservableList<Propiedad> propiedadesTabla;
+
     private Juego juego;
 
     int[] posicionesX = {
@@ -179,6 +196,28 @@ public class TableroController {
         this.juego = juego;
         actualizarInformacionJugadores();
         actualizarTurnoActual();
+
+        propiedadesTabla.setAll(juego.getPropiedades());
+    }
+
+    private void actualizarTabla() {
+        propiedadesTabla.setAll(juego.getPropiedades());
+        tvPropiedades.refresh();
+    }
+
+    @FXML
+    private void initialize() {
+
+        TCDueño.setCellValueFactory(
+            new PropertyValueFactory<>("propietario")
+        );
+
+        TCPropiedad.setCellValueFactory(
+            new PropertyValueFactory<>("nombre")
+        );
+
+        propiedadesTabla = FXCollections.observableArrayList();
+        tvPropiedades.setItems(propiedadesTabla);
     }
     
     private void actualizarInformacionJugadores() {
@@ -191,24 +230,44 @@ public class TableroController {
                     lblColor1.setText("Rojo");
                     lblDinero1.setText(String.valueOf(jugador.getDinero()));
                     ficha1.setVisible(true);
+
+                    if(jugador.getEliminado()){
+                        lblDinero1.setText("ELIMINADO");
+                        ficha1.setVisible(false);
+                    }
                     break;
                 case 1:
                     lblNombre2.setText(jugador.getNombre());
                     lblColor2.setText("Verde");
                     lblDinero2.setText(String.valueOf(jugador.getDinero()));
                     ficha2.setVisible(true);
+
+                    if(jugador.getEliminado()){
+                        lblDinero2.setText("ELIMINADO");
+                        ficha2.setVisible(false);
+                    }
                     break;
                 case 2:
                     lblNombre3.setText(jugador.getNombre());
                     lblColor3.setText("Azul");
                     lblDinero3.setText(String.valueOf(jugador.getDinero()));
                     ficha3.setVisible(true);
+
+                    if(jugador.getEliminado()){
+                        lblDinero3.setText("ELIMINADO");
+                        ficha3.setVisible(false);
+                    }
                     break;
                 case 3:
                     lblNombre4.setText(jugador.getNombre());
                     lblColor4.setText("Rosa");
                     lblDinero4.setText(String.valueOf(jugador.getDinero()));
                     ficha4.setVisible(true);
+
+                    if(jugador.getEliminado()){
+                        lblDinero4.setText("ELIMINADO");
+                        ficha4.setVisible(false);
+                    }
                     break;
             }
         }
@@ -301,6 +360,7 @@ public class TableroController {
 
     @FXML
     private void lanzarDado() {
+        actualizarTabla();
 
         btnLanzarDado.setDisable(true);
 
@@ -426,9 +486,11 @@ public class TableroController {
                 Platform.runLater(() -> {
                     procesarCasilla(jugador);
                     actualizarInformacionJugadores();
-                    juego.siguienteTurno();
-                    actualizarTurnoActual();
-                    btnLanzarDado.setDisable(false);
+                    if(!verificarGanador()){
+                        juego.siguienteTurno();
+                        actualizarTurnoActual();
+                        btnLanzarDado.setDisable(false);
+                    }
                 });
             }).start();
         } catch(Exception e) {
@@ -545,13 +607,12 @@ public class TableroController {
                     }
                     else{
                         int alquiler = p.getAlquiler();
-                        juego.getBanco().cobrar(jugador, alquiler);
-                        propetario.recibir(alquiler);
+                        juego.getBanco().transferir(jugador, propetario, alquiler);
 
                         Alert cobro = new Alert(AlertType.INFORMATION);
                         cobro.setTitle("Alquiler");
                         cobro.setHeaderText("Debes pagar alquiler");
-                        cobro.setContentText("Debes pagar $" + p.getAlquiler() + " de alquiler a" + p.getPropietario().getNombre());
+                        cobro.setContentText("Debes pagar $" + p.getAlquiler() + " de alquiler a " + p.getPropietario().getNombre());
                         cobro.showAndWait();
                     }
                 }
@@ -794,13 +855,12 @@ public class TableroController {
                     }
                     else{
                         int alquiler = pa.getAlquiler();
-                        juego.getBanco().cobrar(jugador, alquiler);
-                        propetario.recibir(alquiler);
+                        juego.getBanco().transferir(jugador, propetario, alquiler);
 
                         Alert cobro = new Alert(AlertType.INFORMATION);
                         cobro.setTitle("Alquiler");
                         cobro.setHeaderText("Debes pagar alquiler");
-                        cobro.setContentText("Debes pagar $" + pa.getAlquiler() + " de alquiler a" + pa.getPropietario());
+                        cobro.setContentText("Debes pagar $" + pa.getAlquiler() + " de alquiler a " + pa.getPropietario().getNombre());
                         cobro.showAndWait();
                     }
                 }
@@ -815,5 +875,30 @@ public class TableroController {
                 juego.getBanco().cobrar(jugador, 200);
                 break;
         }
+    }
+    private boolean verificarGanador(){
+        List<Jugador> jugadores = juego.getJugadores();
+        
+        Jugador ganador = null;
+        int jugadoresActivos = 0;
+
+        for(Jugador j: jugadores){
+            if(!j.getEliminado()){
+                ganador = j;
+                jugadoresActivos++;
+            }
+        }
+
+        if(jugadoresActivos == 1){
+            mostrarPantallaGanador(ganador);
+            return true;
+        }
+        return false;
+    }
+
+    private void mostrarPantallaGanador(Jugador j){
+            PantallaFinalController controller = Navegacion.abrirVentana("/view/PantallaFinal", "Ganador");
+
+            controller.mostrarGanador(j);
     }
 }

@@ -8,6 +8,7 @@ public class Propiedad {
     private Grupo grupo;
     private int cantCasas;
     private int precioCasa;
+    private int alquilerInicial;
 
     public enum Grupo {
         ROJO,
@@ -23,6 +24,7 @@ public class Propiedad {
         setAlquiler(0);
         setPropietario(null);
         setGrupo(null);
+        setPrecioCasa(0);
     }
 
     public Propiedad(String nombre, int precio, int alquiler, Jugador propietario, Grupo grupo, int precioCasa) {
@@ -32,6 +34,7 @@ public class Propiedad {
         setPropietario(propietario);
         setGrupo(grupo);
         setPrecioCasa(precioCasa);
+        setAlquilerIncial(alquiler);
     }
 
     public String getNombre() {
@@ -42,6 +45,9 @@ public class Propiedad {
     }
     public int getAlquiler() {
         return alquiler;
+    }
+    public int getAlquilerIncial() {
+        return alquilerInicial;
     }
     public Jugador getPropietario() {
         return propietario;
@@ -64,6 +70,9 @@ public class Propiedad {
     }
     public void setAlquiler(int alquiler) {
         this.alquiler = alquiler;
+    }
+    public void setAlquilerIncial(int alquilerInicial) {
+        this.alquilerInicial = alquilerInicial;
     }
     public void setPropietario(Jugador propietario) {
         this.propietario = propietario;

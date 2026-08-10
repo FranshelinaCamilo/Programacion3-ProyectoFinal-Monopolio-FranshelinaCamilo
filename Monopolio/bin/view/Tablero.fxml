@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -636,7 +638,7 @@
       <Rectangle fx:id="turno2" arcHeight="5.0" arcWidth="5.0" fill="#7e7b80" height="8.0" layoutX="340.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" width="35.0" />
       <Rectangle fx:id="turno3" arcHeight="5.0" arcWidth="5.0" fill="#7e7b80" height="8.0" layoutX="563.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" width="35.0" />
       <Rectangle fx:id="turno4" arcHeight="5.0" arcWidth="5.0" fill="#7e7b80" height="8.0" layoutX="792.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" width="35.0" />
-      <Button fx:id="btnLanzarDado" layoutX="874.0" layoutY="291.0" mnemonicParsing="false" onAction="#lanzarDado" prefHeight="76.0" prefWidth="142.0" style="-fx-background-color: transparent;">
+      <Button fx:id="btnLanzarDado" layoutX="879.0" layoutY="147.0" mnemonicParsing="false" onAction="#lanzarDado" prefHeight="76.0" prefWidth="142.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="68.0" fitWidth="126.0">
                <image>
@@ -645,7 +647,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Label alignment="CENTER" layoutX="873.0" layoutY="363.0" prefHeight="25.0" prefWidth="135.0" style="-fx-font-weight: BOLD;" text="LANZAR DADO">
+      <Label alignment="CENTER" layoutX="878.0" layoutY="219.0" prefHeight="25.0" prefWidth="135.0" style="-fx-font-weight: BOLD;" text="LANZAR DADO">
          <font>
             <Font name="Microsoft JhengHei UI" size="16.0" />
          </font>
@@ -672,5 +674,11 @@
       </ImageView>
       <ImageView fx:id="ivDado1" fitHeight="54.0" fitWidth="74.0" layoutX="440.0" layoutY="357.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="ivDado2" fitHeight="54.0" fitWidth="74.0" layoutX="534.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true" />
+      <TableView fx:id="tvPropiedades" layoutX="850.0" layoutY="279.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="TCDueño" prefWidth="75.0" text="Dueño" />
+          <TableColumn fx:id="TCPropiedad" prefWidth="124.0" text="Propiedad" />
+        </columns>
+      </TableView>
    </children>
 </Pane>

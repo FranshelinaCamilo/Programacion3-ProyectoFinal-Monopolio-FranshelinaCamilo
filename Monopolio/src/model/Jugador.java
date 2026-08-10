@@ -9,6 +9,7 @@ public class Jugador {
     private ArrayList<Propiedad> propiedades;
     private boolean enCarcel;
     private int turnosPreso; 
+    private boolean eliminado;
 
     public Jugador() {
         setNombre("");
@@ -17,6 +18,7 @@ public class Jugador {
         setPropiedades(new ArrayList<>());
         setEnCarcel(false);
         setTurnosPreso(0);
+        setEliminado(false);
     }
 
     public Jugador(String nombre, int dinero, int posicion) {
@@ -26,6 +28,7 @@ public class Jugador {
         setPropiedades(new ArrayList<>());
         setEnCarcel(false);
         setTurnosPreso(0);
+        setEliminado(false);
     }
 
     public String getNombre() {
@@ -46,6 +49,9 @@ public class Jugador {
     public int getTurnosPreso(){
         return turnosPreso;
     }
+    public boolean getEliminado(){
+        return eliminado;
+    }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -65,6 +71,9 @@ public class Jugador {
     public void setTurnosPreso(int tp){
         this.turnosPreso = tp;
     }
+    public void setEliminado(boolean e){
+        this.eliminado = e;
+    }
 
     public void agregarPropiedad(Propiedad propiedad) {
         propiedades.add(propiedad);
@@ -74,13 +83,22 @@ public class Jugador {
         propiedades.remove(propiedad);
     }
 
-    public void pagar(int cantidad) {
+    public boolean pagar(int cantidad) {
         if (cantidad <= dinero) {
             dinero -= cantidad;
+            return true;
         }
+        dinero = 0;
+        setEliminado(true);
+        return false;
     }
 
     public void recibir(int cantidad) {
         dinero += cantidad;
+    }
+    
+    @Override
+    public String toString() {
+        return nombre;
     }
 }

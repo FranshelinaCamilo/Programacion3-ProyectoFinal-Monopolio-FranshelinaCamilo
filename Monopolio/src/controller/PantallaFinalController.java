@@ -11,8 +11,7 @@ public class PantallaFinalController {
     @FXML
     private Label lbldineroganador;
 
-    @FXML
-    private void mostrarGanador(Jugador ganador) {
+    public void mostrarGanador(Jugador ganador) {
         lblGanador.setText(ganador.getNombre());
         lbldineroganador.setText("$" + ganador.getDinero());
     }
