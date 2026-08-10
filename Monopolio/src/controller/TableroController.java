@@ -13,6 +13,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.shape.Rectangle;
 import static javafx.scene.paint.Color.*;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -519,47 +521,88 @@ public class TableroController {
                 break;
             case SUERTE:
                 Random random = new Random();
-                int carta = random.nextInt(4);
 
-                switch (carta) {
-                    case 0:
-                        Alert suerte1 = new Alert(AlertType.INFORMATION);
-                        suerte1.setTitle("Suerte");
-                        suerte1.setHeaderText("¡Felicidades!");
-                        suerte1.setContentText("Has recibido $200");
-                        suerte1.showAndWait();
 
-                        jugador.recibir(200);
-                        break;
-                    case 1:
-                        Alert suerte2 = new Alert(AlertType.INFORMATION);
-                        suerte2.setTitle("Suerte");
-                        suerte2.setHeaderText("¡Ufff Pobrecito!");
-                        suerte2.setContentText("Debes pagar $100");
-                        suerte2.showAndWait();
+                if (casilla.getPosicion() == 10) {
+                    int prestamo = (random.nextInt(5) + 1) * 100;
+                    
+                    jugador.recibir(prestamo);
 
-                        juego.getBanco().cobrar(jugador, 100);
-                        break;
-                    case 2:
-                        Alert suerte3 = new Alert(AlertType.INFORMATION);
-                        suerte3.setTitle("Suerte");
-                        suerte3.setHeaderText("¡Felicidades!");
-                        suerte3.setContentText("Has recibido $50");
-                        suerte3.showAndWait();
-
-                        jugador.recibir(50);
-                        break;
-                    case 3:
-                        Alert suerte4 = new Alert(AlertType.INFORMATION);
-                        suerte4.setTitle("Suerte");
-                        suerte4.setHeaderText("¡Que sal!");
-                        suerte4.setContentText("Debes pagar $70");
-                        suerte4.showAndWait();
-
-                        juego.getBanco().cobrar(jugador, 70);
-                        break;
+                    Alert alert = new Alert(AlertType.INFORMATION);
+                    alert.setTitle("Suerte");
+                    alert.setHeaderText("Prestamo del banco");
+                    alert.setContentText("El banco te ha concedido un prestamo de $" + prestamo);
+                    alert.showAndWait();
                 }
-                
+                else if(casilla.getPosicion() == 13){
+
+                    int mitad = jugador.getDinero() / 2;
+                    jugador.pagar(mitad);
+
+                    List<Jugador> jugadores = juego.getJugadores();
+
+                    Jugador receptor = jugadores.get(random.nextInt(jugadores.size()));
+
+                    receptor.recibir(mitad);
+
+                    Alert alert = new Alert(AlertType.INFORMATION);
+                    alert.setTitle("Suerte");
+                    alert.setHeaderText("¡De verdad que no tienes suerte!");
+                    alert.setContentText("Has entregado $" + mitad + " a " + receptor.getNombre());
+                    alert.showAndWait();
+                }
+                else if(casilla.getPosicion() == 18){
+                     int premio = (random.nextInt(5) + 1) * 100;
+
+                    jugador.recibir(premio);
+
+                    Alert alert = new Alert(AlertType.INFORMATION);
+                    alert.setTitle("Suerte");
+                    alert.setHeaderText("Premio del banco");
+                    alert.setContentText("¡Has recibido un premio de $" + premio + "!");
+                    alert.showAndWait();
+                }else{
+                    int carta = random.nextInt(4);
+
+                    switch (carta) {
+                        case 0:
+                            Alert suerte1 = new Alert(AlertType.INFORMATION);
+                            suerte1.setTitle("Suerte");
+                            suerte1.setHeaderText("¡Felicidades!");
+                            suerte1.setContentText("Has recibido $200");
+                            suerte1.showAndWait();
+
+                            jugador.recibir(200);
+                            break;
+                        case 1:
+                            Alert suerte2 = new Alert(AlertType.INFORMATION);
+                            suerte2.setTitle("Suerte");
+                            suerte2.setHeaderText("¡Ufff Pobrecito!");
+                            suerte2.setContentText("Debes pagar $100");
+                            suerte2.showAndWait();
+
+                            juego.getBanco().cobrar(jugador, 100);
+                            break;
+                        case 2:
+                            Alert suerte3 = new Alert(AlertType.INFORMATION);
+                            suerte3.setTitle("Suerte");
+                            suerte3.setHeaderText("¡Felicidades!");
+                            suerte3.setContentText("Has recibido $50");
+                            suerte3.showAndWait();
+
+                            jugador.recibir(50);
+                            break;
+                        case 3:
+                            Alert suerte4 = new Alert(AlertType.INFORMATION);
+                            suerte4.setTitle("Suerte");
+                            suerte4.setHeaderText("¡Que sal!");
+                            suerte4.setContentText("Debes pagar $70");
+                            suerte4.showAndWait();
+
+                            juego.getBanco().cobrar(jugador, 70);
+                            break;
+                    }}
+
                 actualizarInformacionJugadores();
 
                 break;
