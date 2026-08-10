@@ -14,6 +14,11 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="1071.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TableroController">
    <children>
+      <ImageView fitHeight="644.0" fitWidth="1078.0" layoutX="-4.0" layoutY="-4.0">
+         <image>
+            <Image url="@../Recursos/Calming%20pixel%20art%20landscape%20432.jpg" />
+         </image>
+      </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="401.0" layoutX="229.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="592.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="268.0" layoutX="304.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="444.0" />
       <Rectangle fx:id="casilla1" arcHeight="5.0" arcWidth="5.0" fill="#99eb9f" height="67.0" layoutX="748.0" layoutY="492.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
