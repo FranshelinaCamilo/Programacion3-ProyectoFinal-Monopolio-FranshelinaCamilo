@@ -300,46 +300,69 @@ public class TableroController {
     @FXML
     private void mostrarCasa(Propiedad propiedad){
         VBox casas = null;
+        ImageView hotel = null;
 
         switch (propiedad.getNombre()) {
             case "Avenida Santiago":
                 casas = AvSantiago;
+                hotel = avSantiagohotel;
                 break;
 
             case "Avenida Virginia":
                 casas = AvVirginia;
+                hotel = AvVirginiaHotel;
                 break;
 
             case "Avenida Tablado":
                 casas = AvTablado;
+                hotel = AvTabladoHotel;
                 break;
 
             case "Avenida Oriental":
                 casas = AvOriental;
+                hotel = AvOrientalHotel;
                 break;
 
             case "Avenida Báltica":
                 casas = AvBaltica;
+                hotel = AvBalticaHotel;
                 break;
 
             case "Avenida Vermont":
                 casas = AvVermont;
+                hotel = AvVermontHotel;
                 break;
 
             case "Avenida Connecticut":
                 casas = AvConnecticut;
+                hotel = AvConnecticutHotel;
                 break;
 
             case "Avenida Indiana":
                 casas = AvIndiana;
+                hotel = AvIndianaHotel;
                 break;
         }
 
-        if(casas == null){
+        if(casas == null || hotel == null){
             return;
         }
 
         int numeroCasa = propiedad.getCantCasas();
+
+        if(numeroCasa >= 4){
+            for(Node fila: casas.getChildren()){
+                if(fila instanceof HBox){
+                    for(Node nodo: ((HBox)fila).getChildren()){
+                        if(nodo instanceof ImageView){
+                            nodo.setVisible(true);
+                        }
+                    }
+                }
+            }
+            hotel.setVisible(true);
+            return;
+        }
 
          int contador = 0;
 
