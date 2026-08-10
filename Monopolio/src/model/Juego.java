@@ -112,4 +112,17 @@ public class Juego {
         casillas.add(new Casilla(23, Casilla.TipoCasilla.PROPIEDAD, avVermont));
     }
 
+    public boolean tieneGrupo(Jugador jugador, Propiedad.Grupo grupo){
+        for(Casilla c: casillas){
+            if(c.esPropiedad()){
+                Propiedad propiedad = c.getPropiedad();
+
+                if(propiedad.getGrupo() == grupo && propiedad.getPropietario() != jugador)
+                    return false;
+
+            }
+        }
+        return true;
+    }
+
 }

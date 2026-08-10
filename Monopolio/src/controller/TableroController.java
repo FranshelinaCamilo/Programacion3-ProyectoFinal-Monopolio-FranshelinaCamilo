@@ -8,6 +8,7 @@ import model.Jugador;
 import model.Propiedad;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.shape.Rectangle;
@@ -261,6 +262,60 @@ public class TableroController {
                     alert.setTitle("Propiedad Disponible");
                     alert.setHeaderText(p.getNombre());
                     alert.setContentText("Precio: $" + p.getPrecio() + "\n¿Desea comprar esta propiedad?");
+                    ButtonType comprar = new ButtonType("Comprar");
+                    ButtonType noComprar = new ButtonType("No Comprar");
+
+                    alert.getButtonTypes().setAll(comprar, noComprar);
+                    alert.showAndWait().ifPresent(respuesta -> {
+                        if(respuesta == comprar){
+                            if(jugador.getDinero() >= p.getPrecio()){
+                                p.setPropietario(jugador);
+                                jugador.pagar(p.getPrecio());
+                                actualizarInformacionJugadores();
+
+                                Alert comprado = new Alert(AlertType.INFORMATION);
+                                comprado.setTitle("Propiedad comprada");
+                                comprado.setHeaderText(null);
+                                comprado.setContentText("Has comprado " + p.getNombre());
+                                comprado.showAndWait();
+                            }
+                            else{
+                                Alert dineroInsuficiente = new Alert(AlertType.WARNING);
+                                dineroInsuficiente.setTitle("Dinero Insuficiente");
+                                dineroInsuficiente.setHeaderText("No puedes comprar esta propiedad");
+                                dineroInsuficiente.setContentText("Necesitas $" + p.getPrecio() + " para comprar esta propiedad");
+
+                                dineroInsuficiente.showAndWait();
+                            }
+                        }else if(respuesta == noComprar){
+                        }
+                    });
+                }
+                else{
+                    Jugador propetario = p.getPropietario();
+                    if(propetario == jugador){
+
+                        if(juego.tieneGrupo(jugador, p.getGrupo())){
+
+                        }else{
+                            Alert alert = new Alert(AlertType.INFORMATION);
+                            alert.setTitle("Propiedad");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Haz caido en tu propia propiedad");
+                            alert.showAndWait();
+                        }
+                    }
+                    else{
+                        int alquiler = p.getAlquiler();
+                        juego.getBanco().cobrar(jugador, alquiler);
+                        propetario.recibir(alquiler);
+
+                        Alert cobro = new Alert(AlertType.INFORMATION);
+                        cobro.setTitle("Alquiler");
+                        cobro.setHeaderText("Debes pagar alquiler");
+                        cobro.setContentText("Debes pagar $" + p.getAlquiler() + " de alquiler a" + p.getPropietario());
+                        cobro.showAndWait();
+                    }
                 }
                 break;
             case IMPUESTO:
@@ -282,10 +337,62 @@ public class TableroController {
                 System.out.println("Cayo en ir a la carcel");
                 break;
             case PARADA:
-                Propiedad a = casilla.getPropiedad();
-                System.out.println("Cayo en una parada");
-                System.out.println("Precio: " + a.getPrecio());
-                System.out.println("Precio: " + a.getAlquiler());
+                Propiedad pa = casilla.getPropiedad();
+                if(pa.estaDisponible()){
+                    Alert alert = new Alert(AlertType.CONFIRMATION);
+                    alert.setTitle("Propiedad Disponible");
+                    alert.setHeaderText(pa.getNombre());
+                    alert.setContentText("Precio: $" + pa.getPrecio() + "\n¿Desea comprar esta parada?");
+                    ButtonType comprar = new ButtonType("Comprar");
+                    ButtonType noComprar = new ButtonType("No Comprar");
+
+                    alert.getButtonTypes().setAll(comprar, noComprar);
+                    alert.showAndWait().ifPresent(respuesta -> {
+                        if(respuesta == comprar){
+                            if(jugador.getDinero() >= pa.getPrecio()){
+                                pa.setPropietario(jugador);
+                                jugador.pagar(pa.getPrecio());
+                                actualizarInformacionJugadores();
+
+                                Alert comprado = new Alert(AlertType.INFORMATION);
+                                comprado.setTitle("Propiedad comprada");
+                                comprado.setHeaderText(null);
+                                comprado.setContentText("Has comprado " + pa.getNombre());
+                                comprado.showAndWait();
+                            }
+                            else{
+                                Alert dineroInsuficiente = new Alert(AlertType.WARNING);
+                                dineroInsuficiente.setTitle("Dinero Insuficiente");
+                                dineroInsuficiente.setHeaderText("No puedes comprar esta propiedad");
+                                dineroInsuficiente.setContentText("Necesitas $" + pa.getPrecio() + " para comprar esta propiedad");
+
+                                dineroInsuficiente.showAndWait();
+                            }
+                        }else if(respuesta == noComprar){
+                        }
+                    });
+                }
+                else{
+                    Jugador propetario = pa.getPropietario();
+                    if(propetario == jugador){
+                        Alert alert = new Alert(AlertType.INFORMATION);
+                        alert.setTitle("Propiedad");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Haz caido en tu propia propiedad");
+                        alert.showAndWait();
+                    }
+                    else{
+                        int alquiler = pa.getAlquiler();
+                        juego.getBanco().cobrar(jugador, alquiler);
+                        propetario.recibir(alquiler);
+
+                        Alert cobro = new Alert(AlertType.INFORMATION);
+                        cobro.setTitle("Alquiler");
+                        cobro.setHeaderText("Debes pagar alquiler");
+                        cobro.setContentText("Debes pagar $" + pa.getAlquiler() + " de alquiler a" + pa.getPropietario());
+                        cobro.showAndWait();
+                    }
+                }
                 break;
             case SALIDA:
                 System.out.println("Cayo en salida");
