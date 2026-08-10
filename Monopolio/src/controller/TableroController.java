@@ -16,6 +16,7 @@ import static javafx.scene.paint.Color.*;
 import java.util.List;
 import java.util.Random;
 
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.application.Platform;
 import javafx.scene.layout.*;
@@ -132,6 +133,12 @@ public class TableroController {
 
     @FXML
     private ImageView AvIndianaHotel;
+
+    @FXML
+    private ImageView ivDado2;
+
+    @FXML
+    private ImageView ivDado1;
 
     private Juego juego;
 
@@ -322,6 +329,8 @@ public class TableroController {
         int resultado1 = dado.lanzarDado();
         int resultado2 = dado.lanzarDado();
 
+        mostrarDados(resultado1, resultado2);
+
         int movimiento = resultado1 + resultado2;
 
         System.out.println("Jugador actual: " + jugadorActual.getNombre());
@@ -344,6 +353,51 @@ public class TableroController {
             moverJugador(jugadorActual, ficha3, posicionAnterior, movimiento);
         } else if(juego.getTurnoActual() == 3){
             moverJugador(jugadorActual, ficha4, posicionAnterior, movimiento);
+        }
+    }
+
+    private void mostrarDados(int resultado1, int resultado2) {
+
+        switch (resultado1) {
+            case 1:
+                ivDado1.setImage(new Image(getClass().getResourceAsStream("/Recursos/Dado.png")));
+                break;
+            case 2:
+                ivDado1.setImage(new Image(getClass().getResourceAsStream("/Recursos/Dado2.png")));
+                break;
+            case 3:
+                ivDado1.setImage(new Image(getClass().getResourceAsStream("/Recursos/Dado3.png")));
+                break;
+            case 4:
+                ivDado1.setImage(new Image(getClass().getResourceAsStream("/Recursos/Dado4.png")));
+                break;
+            case 5:
+                ivDado1.setImage(new Image(getClass().getResourceAsStream("/Recursos/Dado5.png")));
+                break;
+            case 6:
+                ivDado1.setImage(new Image(getClass().getResourceAsStream("/Recursos/Dado6.png")));
+                break;
+        }
+
+        switch (resultado2) {
+            case 1:
+                ivDado2.setImage(new Image(getClass().getResourceAsStream("/Recursos/Dado.png")));
+                break;
+            case 2:
+                ivDado2.setImage(new Image(getClass().getResourceAsStream("/Recursos/Dado2.png")));
+                break;
+            case 3:
+                ivDado2.setImage(new Image(getClass().getResourceAsStream("/Recursos/Dado3.png")));
+                break;
+            case 4:
+                ivDado2.setImage(new Image(getClass().getResourceAsStream("/Recursos/Dado4.png")));
+                break;
+            case 5:
+                ivDado2.setImage(new Image(getClass().getResourceAsStream("/Recursos/Dado5.png")));
+                break;
+            case 6:
+                ivDado2.setImage(new Image(getClass().getResourceAsStream("/Recursos/Dado6.png")));
+                break;
         }
     }
 

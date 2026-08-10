@@ -670,5 +670,7 @@
             <Image url="@../Recursos/chanchoAzul-Photoroom.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="ivDado1" fitHeight="54.0" fitWidth="74.0" layoutX="440.0" layoutY="357.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ivDado2" fitHeight="54.0" fitWidth="74.0" layoutX="534.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </Pane>
