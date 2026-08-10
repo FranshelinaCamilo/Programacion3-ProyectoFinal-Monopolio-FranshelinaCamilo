@@ -355,7 +355,7 @@ public class TableroController {
                 if(fila instanceof HBox){
                     for(Node nodo: ((HBox)fila).getChildren()){
                         if(nodo instanceof ImageView){
-                            nodo.setVisible(true);
+                            nodo.setVisible(false);
                         }
                     }
                 }
@@ -509,11 +509,14 @@ public class TableroController {
                 Platform.runLater(() -> {
                     procesarCasilla(jugador);
                     actualizarInformacionJugadores();
-                    if(!verificarGanador()){
-                        juego.siguienteTurno();
-                        actualizarTurnoActual();
-                        btnLanzarDado.setDisable(false);
+
+                    if (verificarGanador()) {
+                        return;
                     }
+
+                    juego.siguienteTurno();
+                    actualizarTurnoActual();
+                    btnLanzarDado.setDisable(false);
                 });
             }).start();
         } catch(Exception e) {
@@ -920,7 +923,7 @@ public class TableroController {
     }
 
     private void mostrarPantallaGanador(Jugador j){
-            PantallaFinalController controller = Navegacion.abrirVentana("/view/PantallaFinal", "Ganador");
+            PantallaFinalController controller = Navegacion.abrirVentana("/view/PantallaFinal.fxml", "Ganador");
 
             controller.mostrarGanador(j);
     }

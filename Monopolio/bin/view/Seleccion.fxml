@@ -6,11 +6,18 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="604.0" style="-fx-background-color: #efe9ce;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SeleccionController">
    <children>
-      <Button fx:id="btnStart" layoutX="232.0" layoutY="364.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="102.0" onAction="#PresionarStart" style="-fx-background-color: transparent;" visible="false">
+      <ImageView fitHeight="498.0" fitWidth="614.0" layoutX="-3.0" layoutY="-4.0">
+         <image>
+            <Image url="@../Recursos/Calming%20pixel%20art%20landscape%20432.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bfdbf5" height="366.0" layoutX="55.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="498.0" />
+      <Button fx:id="btnStart" layoutX="232.0" layoutY="364.0" mnemonicParsing="false" onAction="#PresionarStart" prefHeight="76.0" prefWidth="102.0" style="-fx-background-color: transparent;" visible="false">
          <graphic>
             <ImageView fitHeight="91.0" fitWidth="132.0">
                <image>
@@ -124,7 +131,7 @@
             <Image url="@../Recursos/question-Photoroom.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnStart1" layoutX="233.0" layoutY="279.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="102.0" onAction="#PresionarStart" style="-fx-background-color: transparent;">
+      <Button fx:id="btnStart1" layoutX="233.0" layoutY="279.0" mnemonicParsing="false" onAction="#PresionarStart" prefHeight="76.0" prefWidth="102.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="91.0" fitWidth="132.0">
                <image>

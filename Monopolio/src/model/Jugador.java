@@ -83,20 +83,33 @@ public class Jugador {
         propiedades.remove(propiedad);
     }
 
+    public void eliminar() {
+        dinero = 0;
+        eliminado = true;
+
+        for (Propiedad p : propiedades) {
+            p.setPropietario(null);
+            p.setCantCasas(0);
+            p.setAlquiler(p.getAlquilerIncial());
+        }
+
+        propiedades.clear();
+    }
+
     public boolean pagar(int cantidad) {
         if (cantidad <= dinero) {
             dinero -= cantidad;
             return true;
         }
-        dinero = 0;
-        setEliminado(true);
+        
+        eliminar();
         return false;
     }
 
     public void recibir(int cantidad) {
         dinero += cantidad;
     }
-    
+
     @Override
     public String toString() {
         return nombre;

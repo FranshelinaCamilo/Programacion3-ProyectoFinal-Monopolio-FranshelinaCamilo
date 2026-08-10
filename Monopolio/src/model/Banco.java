@@ -1,7 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
@@ -39,17 +37,6 @@ public class Banco {
         if(jugador1.pagar(cantidad)){
             jugador2.recibir(cantidad);
         }else{
-            jugador1.setDinero(0);
-            jugador1.setEliminado(true);
-
-            ArrayList<Propiedad> propiedades = jugador1.getPropiedades();
-            for(Propiedad p: propiedades){
-                p.setPropietario(null);
-                p.setCantCasas(0);
-                p.setAlquiler(p.getAlquilerIncial());
-            }
-
-            jugador1.getPropiedades().clear();
             
             Alert eliminado = new Alert(AlertType.INFORMATION);
             eliminado.setTitle("Jugador eliminado");
