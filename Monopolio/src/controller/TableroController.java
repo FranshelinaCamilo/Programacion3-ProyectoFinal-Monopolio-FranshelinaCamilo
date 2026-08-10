@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioMenuItem;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.shape.Rectangle;
 import static javafx.scene.paint.Color.*;
@@ -543,6 +544,9 @@ public class TableroController {
 
                     Jugador receptor = jugadores.get(random.nextInt(jugadores.size()));
 
+                    while(receptor == jugador){
+                        receptor = jugadores.get(random.nextInt(jugadores.size()));
+                    }
                     receptor.recibir(mitad);
 
                     Alert alert = new Alert(AlertType.INFORMATION);
@@ -607,7 +611,41 @@ public class TableroController {
 
                 break;
             case COMUNIDAD:
-                System.out.println("Cayo en comunidad");
+                Random random1 = new Random();
+                int carta = random1.nextInt(3);
+
+                    switch (carta) {
+                        case 0:
+                            Alert comunidad1 = new Alert(AlertType.INFORMATION);
+                            comunidad1.setTitle("Comunidad");
+                            comunidad1.setHeaderText("¡Felicidades!");
+                            comunidad1.setContentText("Recibes $25 por servicios prestados");
+                            comunidad1.showAndWait();
+
+                            jugador.recibir(25);
+                            break;
+                        case 1:
+                            Alert comunidad2 = new Alert(AlertType.INFORMATION);
+                            comunidad2.setTitle("Comunidad");
+                            comunidad2.setHeaderText("¡Ufff Pobrecito!");
+                            comunidad2.setContentText("Has sido multado. Debes pagar $60");
+                            comunidad2.showAndWait();
+
+                            juego.getBanco().cobrar(jugador, 60);
+                            break;
+                        case 2:
+                            Alert comunidad3 = new Alert(AlertType.INFORMATION);
+                            comunidad3.setTitle("Suerte");
+                            comunidad3.setHeaderText("¡Felicidades!");
+                            comunidad3.setContentText("Has heredad0 $100");
+                            comunidad3.showAndWait();
+
+                            jugador.recibir(100);
+                            break;
+                    }
+
+                actualizarInformacionJugadores();
+
                 break;
             case CARCEL:
                 Alert visita = new Alert(AlertType.INFORMATION);
@@ -712,7 +750,13 @@ public class TableroController {
                 }
                 break;
             case SALIDA:
-                System.out.println("Cayo en salida");
+                Alert salida = new Alert(AlertType.INFORMATION);
+                salida.setTitle("Salida");
+                salida.setHeaderText("¡Has caido en Salida!");
+                salida.setContentText("En esta vida nada es gratis mi hijo, pague $200.");
+                salida.showAndWait();
+
+                juego.getBanco().cobrar(jugador, 200);
                 break;
         }
     }
