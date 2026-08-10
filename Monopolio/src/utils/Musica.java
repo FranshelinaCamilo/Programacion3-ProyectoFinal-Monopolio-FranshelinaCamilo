@@ -9,9 +9,7 @@ public class Musica {
 
     public static void iniciar() {
         if (reproductor == null) {
-            Media media = new Media(
-                Musica.class.getResource("/Recursos/AWalk.mp3").toExternalForm()
-            );
+            Media media = new Media(Musica.class.getResource("/Recursos/AWalk.mp3").toExternalForm());
 
             reproductor = new MediaPlayer(media);
             reproductor.setCycleCount(MediaPlayer.INDEFINITE);
@@ -23,9 +21,8 @@ public class Musica {
     public static void setVolumen(double volumen) {
         Musica.volumen = volumen;
 
-        if (reproductor != null) {
+        if (reproductor != null) 
             reproductor.setVolume(volumen);
-        }
     }
 
     public static double getVolumen() {
