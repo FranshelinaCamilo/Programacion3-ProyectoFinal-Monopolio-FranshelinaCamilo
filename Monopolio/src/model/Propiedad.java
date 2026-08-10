@@ -7,6 +7,7 @@ public class Propiedad {
     private Jugador propietario;
     private Grupo grupo;
     private int cantCasas;
+    private int precioCasa;
 
     public enum Grupo {
         ROJO,
@@ -50,6 +51,9 @@ public class Propiedad {
     public int getCantCasas(){
         return cantCasas;
     }
+    public int getPrecioCasa(){
+        return precioCasa;
+    }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -69,9 +73,15 @@ public class Propiedad {
     public void setCantCasas(int c){
         this.cantCasas = c;
     }
+    public void setPrecioCasa(int p){
+        this.precioCasa = p;
+    }
 
     public boolean estaDisponible() {
         return propietario == null;
+    }
+    public boolean puedeConstruirCasa(){
+        return cantCasas < 4;
     }
 
 }

@@ -296,7 +296,20 @@ public class TableroController {
                     if(propetario == jugador){
 
                         if(juego.tieneGrupo(jugador, p.getGrupo())){
+                            Alert construir = new Alert(AlertType.CONFIRMATION);
+                            construir.setTitle("Construccion");
+                            construir.setHeaderText("Tienes todo el grupo");
+                            construir.setContentText("Tienes todas las propiedades del grupo " + p.getGrupo() + "\n¿Deseas construir una casa?");
 
+                            ButtonType construirC = new ButtonType("Construir");
+                            ButtonType noConstruir = new ButtonType("No Construir");
+
+                            construir.getButtonTypes().setAll(construirC, noConstruir);
+                            construir.showAndWait().ifPresent(respuesta->{
+                                if(respuesta == construirC){
+                                    //construir casa
+                                }
+                            });
                         }else{
                             Alert alert = new Alert(AlertType.INFORMATION);
                             alert.setTitle("Propiedad");
