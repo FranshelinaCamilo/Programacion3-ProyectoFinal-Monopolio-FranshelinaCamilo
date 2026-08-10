@@ -6,6 +6,7 @@ public class Propiedad {
     private int alquiler;
     private Jugador propietario;
     private Grupo grupo;
+    private int cantCasas;
 
     public enum Grupo {
         ROJO,
@@ -46,6 +47,9 @@ public class Propiedad {
     public Grupo getGrupo() {
         return grupo;
     }
+    public int getCantCasas(){
+        return cantCasas;
+    }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -62,8 +66,12 @@ public class Propiedad {
     public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
     }
+    public void setCantCasas(int c){
+        this.cantCasas = c;
+    }
 
     public boolean estaDisponible() {
         return propietario == null;
     }
+
 }
