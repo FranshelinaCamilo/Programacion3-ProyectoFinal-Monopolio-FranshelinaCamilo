@@ -296,20 +296,49 @@ public class TableroController {
                     if(propetario == jugador){
 
                         if(juego.tieneGrupo(jugador, p.getGrupo())){
-                            Alert construir = new Alert(AlertType.CONFIRMATION);
-                            construir.setTitle("Construccion");
-                            construir.setHeaderText("Tienes todo el grupo");
-                            construir.setContentText("Tienes todas las propiedades del grupo " + p.getGrupo() + "\n¿Deseas construir una casa?");
+                            if(p.puedeConstruirCasa()){
+                                Alert construir = new Alert(AlertType.CONFIRMATION);
+                                construir.setTitle("Construccion");
+                                construir.setHeaderText("Tienes todo el grupo");
+                                construir.setContentText("Tienes todas las propiedades del grupo " + p.getGrupo() + "\n¿Deseas construir una casa? \nPrecio de la casa $" + p.getPrecioCasa());
 
-                            ButtonType construirC = new ButtonType("Construir");
-                            ButtonType noConstruir = new ButtonType("No Construir");
+                                ButtonType construirC = new ButtonType("Construir");
+                                ButtonType noConstruir = new ButtonType("No Construir");
 
-                            construir.getButtonTypes().setAll(construirC, noConstruir);
-                            construir.showAndWait().ifPresent(respuesta->{
-                                if(respuesta == construirC){
-                                    //construir casa
-                                }
-                            });
+                                construir.getButtonTypes().setAll(construirC, noConstruir);
+                                construir.showAndWait().ifPresent(respuesta->{
+                                    if(respuesta == construirC){
+                                        if(jugador.getDinero() >= p.getPrecioCasa()){
+                                            jugador.pagar(p.getPrecioCasa());
+
+                                            p.setCantCasas(p.getCantCasas() + 1);
+                                            p.setAlquiler(p.getAlquiler() * 2);
+
+                                            actualizarInformacionJugadores();
+
+                                            Alert construida = new Alert(AlertType.INFORMATION);
+                                            construida.setTitle("Construccion");
+                                            construida.setHeaderText("Casa Construida");
+                                            construida.setContentText("Has costruido una casa en " + p.getNombre() + "\nNuevo Alquiler: " + p.getAlquiler());
+                                            construida.showAndWait();
+                                        }else{
+                                            Alert dineroInsuficiente = new Alert(AlertType.WARNING);
+                                            dineroInsuficiente.setTitle("Dinero Insuficiente");
+                                            dineroInsuficiente.setHeaderText("No puedes construir en esta propiedad");
+                                            dineroInsuficiente.setContentText("Necesitas $" + p.getPrecioCasa() + " para construir una casa en esta propiedad");
+
+                                            dineroInsuficiente.showAndWait();
+                                        }
+                                    }
+                                });
+                            }else{
+                                Alert alert = new Alert(AlertType.INFORMATION);
+                                alert.setTitle("Propiedad");
+                                alert.setHeaderText(null);
+                                alert.setContentText("Esta propiedad ya tiene el numero maximo de casas");
+                                alert.showAndWait();
+                            }
+                            
                         }else{
                             Alert alert = new Alert(AlertType.INFORMATION);
                             alert.setTitle("Propiedad");

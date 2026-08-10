@@ -25,12 +25,13 @@ public class Propiedad {
         setGrupo(null);
     }
 
-    public Propiedad(String nombre, int precio, int alquiler, Jugador propietario, Grupo grupo) {
+    public Propiedad(String nombre, int precio, int alquiler, Jugador propietario, Grupo grupo, int precioCasa) {
         setNombre(nombre);
         setPrecio(precio);
         setAlquiler(alquiler);
         setPropietario(propietario);
         setGrupo(null);
+        setPrecioCasa(precioCasa);
     }
 
     public String getNombre() {

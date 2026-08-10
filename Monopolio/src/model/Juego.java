@@ -11,16 +11,16 @@ public class Juego {
     private Dado dado;
     private int turnoActual;
 
-    Propiedad avBaltica = new Propiedad("Avenida Baltica", 60, 4, null, Propiedad.Grupo.AZUL);
-    Propiedad avOriental = new Propiedad("Avenida Oriental", 100, 6, null, Propiedad.Grupo.AZUL);
-    Propiedad avTablado = new Propiedad("Avenida Tablado", 140, 10, null, Propiedad.Grupo.MORADO);
-    Propiedad avVirginia = new Propiedad("Avenida Virginia", 200, 16, null, Propiedad.Grupo.MORADO);
-    Propiedad avSantiago = new Propiedad("Avenida Santiago", 240, 20, null, Propiedad.Grupo.ROJO);
-    Propiedad avIndiana = new Propiedad("Avenida Indiana", 300, 26, null, Propiedad.Grupo.ROJO);
-    Propiedad avConnecticut = new Propiedad("Avenida Connecticut", 350, 35, null, Propiedad.Grupo.AMARILLO);
-    Propiedad avVermont = new Propiedad("Avenida Vermont", 400, 50, null, Propiedad.Grupo.AMARILLO);
-    Propiedad Ferrocarril1 = new Propiedad("Ferrocarril 1", 200, 25, null, Propiedad.Grupo.FERROCARRIL);
-    Propiedad Ferrocarril2 = new Propiedad("Ferrocarril 2", 200, 25, null, Propiedad.Grupo.FERROCARRIL);
+    Propiedad avBaltica = new Propiedad("Avenida Baltica", 60, 4, null, Propiedad.Grupo.AZUL, 30);
+    Propiedad avOriental = new Propiedad("Avenida Oriental", 100, 6, null, Propiedad.Grupo.AZUL, 50);
+    Propiedad avTablado = new Propiedad("Avenida Tablado", 140, 10, null, Propiedad.Grupo.MORADO, 70);
+    Propiedad avVirginia = new Propiedad("Avenida Virginia", 200, 16, null, Propiedad.Grupo.MORADO, 100);
+    Propiedad avSantiago = new Propiedad("Avenida Santiago", 240, 20, null, Propiedad.Grupo.ROJO, 120);
+    Propiedad avIndiana = new Propiedad("Avenida Indiana", 300, 26, null, Propiedad.Grupo.ROJO, 150);
+    Propiedad avConnecticut = new Propiedad("Avenida Connecticut", 350, 35, null, Propiedad.Grupo.AMARILLO, 175);
+    Propiedad avVermont = new Propiedad("Avenida Vermont", 400, 50, null, Propiedad.Grupo.AMARILLO, 200);
+    Propiedad Ferrocarril1 = new Propiedad("Ferrocarril 1", 200, 25, null, Propiedad.Grupo.FERROCARRIL, 0);
+    Propiedad Ferrocarril2 = new Propiedad("Ferrocarril 2", 200, 25, null, Propiedad.Grupo.FERROCARRIL, 0);
 
     public Juego() {
         jugadores = new ArrayList<>();
