@@ -1,5 +1,3 @@
-# Programacion3-ProyectoFinal-Monopolio-FranshelinaCamilo
-
 # Monopolio - Proyecto Final
 
 **Estudiante:** Franshelina Camilo Cabrera
@@ -70,5 +68,3 @@ Entre las casillas implementadas se encuentran:
 8. Si un jugador no puede pagar una deuda, queda eliminado de la partida y sus propiedades vuelven a estar disponibles.
 9. La partida termina cuando queda un solo jugador activo.
 10. El último jugador que permanezca en la partida es declarado **ganador**.
-
-Proyecto Final - Programación 3
